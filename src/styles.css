@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --red: #772D29;
+  --orange: #D4654B;
+  --pastel-orange: #F9D8A7;
+  --light-yellow: #FFF7E1;
+  --pink: #EA9CC9;
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey: #A6A6A6;
+}
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+app-intro, app-login {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--red);
+}
+app-login {
+  background-color: var(--light-yellow);
+}
+input {
+  text-align: center;
+  color: var(--red);
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+router-outlet + * {
+  display: block; 
+  animation: fade 1s;
+}

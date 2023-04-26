@@ -1,0 +1,24 @@
+body  {
+    background-color: var(--red);
+}
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.logo, .logo-word {  
+    display: block;
+    width: 160px;
+    height: 100px;
+    background-color: var(--pastel-orange);
+    mask: url(/assets/icons/summit-logo.svg) no-repeat center;
+}
+.logo-word {
+    background-color: var(--pink);
+    mask: url(/assets/icons/summit.svg) no-repeat center;
+    height: 50px;
+}
