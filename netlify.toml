@@ -1,5 +1,4 @@
 [[redirects]]
   from = "/*"
-  to = "https://xp-user-experience.netlify.app/"
+  to = "/index.html"
   status = 200
-  force = true
