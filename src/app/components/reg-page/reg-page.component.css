@@ -17,6 +17,9 @@ body  {
     font-size: 20px;
     text-align: center;
 }
+.main-container {
+    margin: auto 0;
+}
 .main-div, .college div, .persona div {
     display: flex;
     justify-content: center;
@@ -96,6 +99,6 @@ img {
 }
 @media (min-width: 768px) {
     .grid-container {
-       grid-template-columns: repeat(4, 1fr);
+       grid-template-columns: repeat(5, 1fr);
     }
 }

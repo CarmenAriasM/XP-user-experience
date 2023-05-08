@@ -127,6 +127,7 @@ export class RegPageComponent {
     }
     document.getElementById('image' + id)?.classList.add('border');
     this.selectedCollege = id;
+    this.goToPersonaSelection();
   }
   choosePersona(id: number) {
     for(let i = 0; i < 13; i++) {
