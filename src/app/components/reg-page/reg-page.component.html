@@ -1,0 +1,49 @@
+<div class="main-container" id="reg-container" *ngIf="showForm">
+    <div class="form">
+        <input type="text" name="" id="person-name" placeholder="NAME" [(ngModel)]="personName">
+        <input type="password" name="" id="person-uid" placeholder="UID" [(ngModel)]="personUid">
+        <button class="login-btn" type="button" (click)="goToUniversitySelection()" [disabled]="!personName || !personUid"  [ngClass]="!personName || !personUid ? 'cancel-btn' : 'login-btn'">ENTER</button>
+    </div>
+</div>
+<div id="college-container" *ngIf="showCollege" class="main-div">
+    <div>Please select your organization:</div>
+    <div class="grid-container">
+        <div *ngFor="let college of colleges" class="college">
+            <div><img src="{{college.image}}" alt="" id="image{{college.id}}" (click)="chooseCollege(college.id)"></div>
+            <div>{{college.name}}</div>
+        </div>
+    </div>
+    <div>
+        <button class="login-btn" type="button" (click)="goToPersonaSelection()" [disabled]="!selectedCollege"  [ngClass]="!selectedCollege ? 'cancel-btn' : 'login-btn'">CONTINUE</button>
+    </div>
+    <div>
+        <button class="login-btn back-btn" type="button" (click)="goToForm()">GO BACK</button>
+    </div>
+</div>
+<div id="persona-container" *ngIf="showPersona" class="main-div">
+    <div>Please select your persona:</div>
+    <div class="grid-container">
+        <div *ngFor="let persona of personas" class="persona">
+            <div><img src="{{persona.image}}" alt="" id="imagePersona{{persona.id}}" (click)="choosePersona(persona.id)"></div>
+            <div>{{persona.name}}</div>
+        </div>
+    </div>
+    <div>
+        <button class="login-btn" type="button" (click)="openPopUp()" [disabled]="!selectedPersona"  [ngClass]="!selectedPersona ? 'cancel-btn' : 'login-btn'">CONTINUE</button>
+    </div>
+    <div>
+        <button class="login-btn back-btn" type="button" (click)="goToUniversitySelection()">GO BACK</button>
+    </div>
+</div>
+<div class="alert" *ngIf="wasItAsked">
+    <div class="inner" >
+        <div>Are your registration details correct and would you like to continue?</div>
+        <div>
+            <button type="button" class="login-btn confirmation-btn" (click)="sendToDB()">Yes</button>
+            <button type="button" class="login-btn confirmation-btn" (click)="closePopUp()">No</button>
+        </div>
+    </div>
+</div>
+<div class="thanks-message" *ngIf="showThanks"> 
+    <div>Thank you!</div>
+</div>

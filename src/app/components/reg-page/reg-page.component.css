@@ -1,0 +1,101 @@
+body  {
+    background-color: var(--red);
+}
+@keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+.fadeOut {
+    animation: fade 1s;
+}
+.main-div {
+    gap: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+.main-div, .college div, .persona div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+img {
+    width: 100px;
+    height: 100px;
+    background-color: var(--red);
+    border-radius: 9999px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.college, .persona {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.border {
+    transition: all 300ms;
+    border: 4px solid var(--black);
+}
+.cancel-btn {
+    opacity: .4;
+    cursor: auto;
+}
+.back-btn {
+    background-color: var(--pastel-orange) !important;
+    color: var(--red);
+    border-color: var(--pastel-orange);
+} 
+.alert {
+    position: absolute;
+    left: 33%;
+    right: 33%;
+    background-color: var(--light-yellow);
+    border: 3px solid var(--red);
+    border-radius: 20px;
+    font-size: 17px;
+    padding: 10px;
+    color: var(--red);
+}
+.confirmation-btn {
+    border: 2px solid var(--light-yellow);
+    transition: all 300ms;
+}
+.confirmation-btn:hover {
+    background-color: var(--pastel-orange);
+    color: var(--red);
+}
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.inner div {
+    display: flex;
+    gap: 10px;
+}
+.thanks-message {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 550px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+     }
+}
+@media (min-width: 768px) {
+    .grid-container {
+       grid-template-columns: repeat(4, 1fr);
+    }
+}

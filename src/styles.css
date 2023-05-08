@@ -19,18 +19,33 @@ html, body {
   margin: 0;
   padding: 0;
 }
-app-intro, app-login {
+app-intro, app-login, app-reg-page {
   width: 100%;
   height: 100%;
   display: block;
   background-color: var(--red);
 }
-app-login {
+app-login, app-home, app-reg-page {
   background-color: var(--light-yellow);
 }
 input {
   text-align: center;
   color: var(--red);
+}
+app-home {
+  height: 100%;
+}
+app-footer {
+  width: 100%;
+}
+app-reg-page {
+  display: flex  !important;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  min-height: 100%;
+  padding: 30px 0;
+  position: relative;
 }
 @keyframes fade {
   0% {
@@ -43,4 +58,82 @@ input {
 router-outlet + * {
   display: block; 
   animation: fade 1s;
+}
+/* Icons masking */
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: black;
+  background-color: var(--red);
+  cursor: pointer;
+}
+.icon-house {
+  mask: url(/assets/icons/icon-house.svg) no-repeat center;
+}
+.icon-prize {
+  mask: url(/assets/icons/icon-prize.svg) no-repeat center;
+}
+.icon-bell {
+  mask: url(/assets/icons/icon-bell.svg) no-repeat center;
+}
+.icon-medal {
+  mask: url(/assets/icons/icon-medal.svg) no-repeat center;
+  width: 32px;
+  height: 40px;
+  background-color: var(--white);
+}
+.icon-chat {
+  mask: url(/assets/icons/icon-chat.svg) no-repeat center;
+}
+
+/*  Buttons styles */
+.form, .main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 100px;
+}
+.form {
+  height: unset;
+  gap: 20px;
+}
+input, .login-btn, .first-access-btn {
+  width: 244px;
+  height: 42px;
+  border: 2px solid var(--red);
+  border-radius: 21.5px;
+  background: transparent;
+}
+input::placeholder {
+  color: var(--red);
+  text-align: center;
+}
+.login-btn {
+  background-color: var(--red);
+  color: var(--light-yellow);
+  cursor: pointer;
+  transition: all 300ms;
+}
+.login-btn:hover {
+  background-color: var(--red);
+  opacity: .8;
+}
+.first-access-btn {
+  background: var(--pastel-orange);
+  border: 2px solid var(--pastel-orange);
+  color: var(--red);
+  cursor: pointer;
+  transition: all 300ms;
+}
+.first-access-btn:hover {
+  opacity: .8;
+}
+input::placeholder, .login-btn, .first-access-btn {
+  font-size: 17px;
+  font-weight: 300;
 }

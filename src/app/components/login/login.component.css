@@ -1,54 +1,6 @@
 body  {
     background-color: var(--red);
 }
-.form, .main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    gap: 100px;
-}
-.form {
-    height: unset;
-    gap: 20px;
-}
-input, .login-btn, .first-access-btn {
-    width: 244px;
-    height: 42px;
-    border: 2px solid var(--red);
-    border-radius: 21.5px;
-    background: transparent;
-}
-input::placeholder {
-    color: var(--red);
-    text-align: center;
-}
-.login-btn {
-    background-color: var(--red);
-    color: var(--light-yellow);
-    cursor: pointer;
-    transition: all 300ms;
-}
-.login-btn:hover {
-    background-color: var(--red);
-    opacity: .8;
-}
-.first-access-btn {
-    background: var(--pastel-orange);
-    border: 2px solid var(--pastel-orange);
-    color: var(--red);
-    cursor: pointer;
-    transition: all 300ms;
-}
-.first-access-btn:hover {
-    opacity: .8;
-}
-input::placeholder, .login-btn, .first-access-btn {
-    font-size: 17px;
-    font-weight: 300;
-}
 .recover-password {
     font-size: 12px;
     color: var(--red);
