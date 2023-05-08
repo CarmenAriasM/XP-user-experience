@@ -12,18 +12,18 @@ export class RegPageComponent {
   showPersona: boolean = false;
   showThanks: boolean = false;
   colleges = [
-    {id: 1, name: 'College 1', image: 'assets/trinity-logo.png'},
-    {id: 2, name: 'College 2', image: 'assets/trinity-logo.png'},
-    {id: 3, name: 'College 3', image: 'assets/trinity-logo.png'},
-    {id: 4, name: 'College 4', image: 'assets/trinity-logo.png'},
-    {id: 5, name: 'College 5', image: 'assets/trinity-logo.png'},
-    {id: 6, name: 'College 6', image: 'assets/trinity-logo.png'},
-    {id: 7, name: 'College 7', image: 'assets/trinity-logo.png'},
-    {id: 8, name: 'College 8', image: 'assets/trinity-logo.png'},
-    {id: 9, name: 'College 9', image: 'assets/trinity-logo.png'},
-    {id: 10, name: 'College 10', image: 'assets/trinity-logo.png'},
-    {id: 11, name: 'College 11', image: 'assets/trinity-logo.png'},
-    {id: 12, name: 'Other', image: 'assets/trinity-logo.png'}
+    {id: 1, name: 'College 1', image: 'assets/college-logo.png'},
+    {id: 2, name: 'College 2', image: 'assets/college-logo.png'},
+    {id: 3, name: 'College 3', image: 'assets/college-logo.png'},
+    {id: 4, name: 'College 4', image: 'assets/college-logo.png'},
+    {id: 5, name: 'College 5', image: 'assets/college-logo.png'},
+    {id: 6, name: 'College 6', image: 'assets/college-logo.png'},
+    {id: 7, name: 'College 7', image: 'assets/college-logo.png'},
+    {id: 8, name: 'College 8', image: 'assets/college-logo.png'},
+    {id: 9, name: 'College 9', image: 'assets/college-logo.png'},
+    {id: 10, name: 'College 10', image: 'assets/college-logo.png'},
+    {id: 11, name: 'College 11', image: 'assets/college-logo.png'},
+    {id: 12, name: 'Other', image: 'assets/college-logo.png'}
   ]
   personas = [
     {id: 1, name: 'Persona 1', image: 'assets/persona.png'},
@@ -58,11 +58,6 @@ export class RegPageComponent {
     this.hideContainer('reg-container', 'form')
     this.hideContainer('persona-container', 'persona')
     this.showContainer('college-container', 'college')
-    setTimeout(() => {
-      if(this.selectedCollege) {
-        this.chooseCollege(this.selectedCollege);
-      }
-    }, 1000);
   }
   // Show persona options to choose from
   goToPersonaSelection() {
@@ -71,11 +66,6 @@ export class RegPageComponent {
     this.requestJson = {
       ...this.personDetails, college_id: this.selectedCollege
     }
-    setTimeout(() => {
-      if(this.selectedPersona) {
-        this.choosePersona(this.selectedPersona);
-      }
-    }, 1000);
   }
   // Hide form or college container
   hideContainer(container: string, variable: string) {
