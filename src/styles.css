@@ -33,7 +33,7 @@ input {
   color: var(--red);
 }
 app-home {
-  height: 100%;
+  height: calc(100% + 100px);
 }
 app-footer {
   width: 100%;

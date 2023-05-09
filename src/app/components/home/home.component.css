@@ -5,6 +5,7 @@ app-footer {
 .container {
     padding: 20px;
     position: relative;
+    height: 100%;
 }
 .page-title {
     text-align: center;
@@ -26,14 +27,14 @@ app-footer {
     margin-top: 15px
 }
 .banner img {
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     border-radius: 999px;
     margin-top: 5px;
 }
 .grid-container {
     position: absolute;
-    top: 150px;
+    top: 160px;
     left: 10%;
     right: 10%;
     display: grid;
@@ -54,7 +55,7 @@ app-footer {
 }
 .number-points {
     color: var(--red);
-    font-size: 25px;
+    font-size: 30px;
 }
 .number-points span {
     font-size: 18px;
@@ -68,4 +69,11 @@ app-footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.grid-item {
+    padding: 20px;
+    text-align: center;
+}
+.grid-item .number-points span {
+    margin-left: unset;
 }
