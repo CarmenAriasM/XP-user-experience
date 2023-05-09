@@ -26,13 +26,14 @@
         </div>
     </div>
     <div>
-        <button class="login-btn" type="button" (click)="openPopUp()" [disabled]="!selectedPersona"  [ngClass]="!selectedPersona ? 'cancel-btn' : 'login-btn'">CONTINUE</button>
+        <button class="login-btn" type="button" (click)="sendToDB()" [disabled]="!selectedPersona"  [ngClass]="!selectedPersona ? 'cancel-btn' : 'login-btn'">REGISTER</button>
     </div>
     <div>
         <button class="login-btn back-btn" type="button" (click)="goToUniversitySelection()">GO BACK</button>
     </div>
 </div>
-<div class="alert" *ngIf="wasItAsked">
+<!-- TODO Popup message -->
+<!-- <div class="alert" *ngIf="wasItAsked">
     <div class="inner" >
         <div>Are your registration details correct and would you like to continue?</div>
         <div>
@@ -40,7 +41,8 @@
             <button type="button" class="login-btn confirmation-btn" (click)="closePopUp()">No</button>
         </div>
     </div>
-</div>
+</div> -->
+<!-- END TODO Popup message -->
 <div class="thanks-message" *ngIf="showThanks"> 
     <div>Thank you!</div>
 </div>

@@ -6,6 +6,7 @@
     background-color: var(--white);
     height: 50px;
     gap: 40px;
+    flex-direction: row;
 }
 .center-item {
     position: absolute;

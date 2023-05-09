@@ -45,7 +45,10 @@ export class RegPageComponent {
   personName: any;
   personUid: any;
   requestJson: any;
-  wasItAsked: boolean = false;
+  // TODO Popup message 
+  // wasItAsked: boolean = false;
+  // END TODO Popup message 
+
   // Show form
   goToForm() {
     this.hideContainer('persona-container', 'persona')
@@ -126,15 +129,18 @@ export class RegPageComponent {
     document.getElementById('imagePersona' + id)?.classList.add('border');
     this.selectedPersona = id;
   }
-  openPopUp() {
+  // TODO Popup message 
+ /*  openPopUp() {
     this.wasItAsked = true;
-  }
+  } */
+  // END TODO Popup message 
   sendToDB() {
     this.requestJson = {
       ...this.personDetails, college_id: this.selectedCollege, persona_id: this.selectedPersona
     }
     console.log(this.requestJson)
-    this.wasItAsked = false;
+    // TODO Popup message 
+    // this.wasItAsked = false; 
     this.personDetails = {}
     this.selectedCollege = undefined;
     this.selectedPersona = undefined;
@@ -150,7 +156,9 @@ export class RegPageComponent {
       this.goToForm()
     }, 3000);
   }
-  closePopUp() {
+  // TODO Popup message 
+  /* closePopUp() {
     this.wasItAsked = false;
-  }
+  } */
+  // END TODO Popup message 
 }
