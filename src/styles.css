@@ -32,9 +32,9 @@ input {
   text-align: center;
   color: var(--red);
 }
-app-home {
+/* app-home {
   height: calc(100% + 20%);
-}
+} */
 app-footer {
   width: 100%;
 }
