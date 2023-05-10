@@ -1,0 +1,83 @@
+<div class="first-container">
+    <div class="page-title">LEADERBOARDS</div>
+    <div class="grid-container">
+        <div class="first-item">
+           <div class="first-item-number">61</div>
+           <div>Your current personal score</div>
+        </div>
+        <div class="item">
+            <div class="item-number">52</div>
+            <div>Company's average current score</div>
+        </div>
+        <div class="item">
+            <div class="item-number">79</div>
+            <div>Your best score</div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div routerLink="/how-it-works">How it works</div>
+        <div>Create new leaderboard</div>
+    </div>
+</div>
+<div>
+    <div>
+        <div>LEADERBOARDS</div>
+        <div class="underline" *ngIf="leaderboards"></div>
+    </div>
+    <div>
+        <div>FRIENDS</div>
+        <div class="underline" *ngIf="!leaderboards"></div>
+    </div>
+    <div class="leaderboards" *ngIf="leaderboards">
+        <div>
+            <div>
+                <div>Lunch Mates</div>
+                <div>Your current position: 7</div>
+            </div>
+            <div>
+                <div>Online Sales Team</div>
+                <div>Your current position: 1</div>
+                <div>
+                    <div>
+                        <div>img</div>
+                        <div>1</div>
+                        <div>Maria Rodriguez</div>
+                    </div>
+                    <div>
+                        <div>img</div>
+                        <div>2</div>
+                        <div>Harry Stevens</div>
+                    </div>
+                    <div>
+                        <div>img</div>
+                        <div>3</div>
+                        <div>Luke Jones</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="friends" *ngIf="!leaderboards">
+        <div>
+            <div>img</div>
+            <div>Gabriela Poynter</div>
+            <div>
+                <div>ACCEPT REQUEST</div>
+                <div>DENY REQUEST</div>
+            </div>
+        </div>
+        <div>
+            <div>img</div>
+            <div>Luke Jones</div>
+        </div>
+        <div>
+            <div>img</div>
+            <div>Ronny Fletcher</div>
+        </div>
+        <div>
+            <div>img</div>
+            <div>Harry Stevens</div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

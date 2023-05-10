@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" (click)="hideAllData()">
     <div class="page-title">HOME</div>
     <div class="banner">
         <div><img src="assets/home-picture.png" alt=""></div>
@@ -36,16 +36,22 @@
                 <div class="points-subtitle">Of day-off achieved so far</div>
             </div>
         </div>
-        <div class="item grid-item">
-            <div>
+        <div class="item grid-item" (click)="preventDefault($event)">
+            <div *ngIf="!showBackData1" (click)="toggleData(1)">
                 <div class="number-points tons">0.0495 <span>tons</span></div>
                 <div class="points-subtitle">Of C02 saved this week</div>
             </div>
+            <div *ngIf="showBackData1" class="back-data">
+                This is the equivalent of a flight from Dublin to São Paulo.
+            </div>
         </div>
-        <div class="item grid-item">
-            <div>
+        <div class="item grid-item" (click)="preventDefault($event)">
+            <div *ngIf="!showBackData2" (click)="toggleData(2)">
                 <div class="number-points">1.7 <span>tons</span></div>
                 <div class="points-subtitle">Of C02 saved since you joined</div>
+            </div>
+            <div *ngIf="showBackData2" class="back-data">
+                If everyone on your friends list saves the same amount, you could travel around the world 7.05 times on an electric train.
             </div>
         </div>
         <div class="item grid-item">

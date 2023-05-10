@@ -11,6 +11,8 @@ import { RegPageComponent } from './components/reg-page/reg-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { RoutesComponent } from './components/routes/routes.component';
+import { LeaderboardsComponent } from './components/leaderboards/leaderboards.component';
+import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RoutesComponent } from './components/routes/routes.component';
     FooterComponent,
     RegPageComponent,
     NotFoundComponent,
-    RoutesComponent
+    RoutesComponent,
+    LeaderboardsComponent,
+    HowItWorksComponent
   ],
   imports: [
     BrowserModule,

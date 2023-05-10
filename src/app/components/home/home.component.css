@@ -39,6 +39,8 @@
 .grid-container .item {
     background-color: var(--white);
     border-radius: 20px;
+    display: flex;
+    align-items: center;
 }
 .points {
     grid-column: 1/3;
@@ -62,6 +64,8 @@
 }
 .points-subtitle {
     margin: 10px 10px 0 0;
+}
+.back-data, .points-subtitle {
     font-size: 12px;
 }
 .points div:nth-child(1):not(.number-points) {

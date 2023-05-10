@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RegPageComponent } from './components/reg-page/reg-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RoutesComponent } from './components/routes/routes.component';
+import { LeaderboardsComponent } from './components/leaderboards/leaderboards.component';
+import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'criochfort', component: RegPageComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'routes', component: RoutesComponent },
+  { path: 'leaderboards', component: LeaderboardsComponent },
+  { path: 'how-it-works', component: HowItWorksComponent },
 
 
   { path: '**', redirectTo: 'not-found' },
