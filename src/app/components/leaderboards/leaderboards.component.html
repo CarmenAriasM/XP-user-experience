@@ -19,24 +19,43 @@
         <div>Create new leaderboard</div>
     </div>
 </div>
-<div>
-    <div>
-        <div>LEADERBOARDS</div>
+<div class="sections">
+    <div class="section">
+        <div [ngClass]="!leaderboards ? 'grey-title' : 'black-title'">LEADERBOARDS</div>
         <div class="underline" *ngIf="leaderboards"></div>
     </div>
-    <div>
-        <div>FRIENDS</div>
+    <div class="section">
+        <div [ngClass]="leaderboards ? 'grey-title' : 'black-title'">FRIENDS</div>
         <div class="underline" *ngIf="!leaderboards"></div>
     </div>
+</div>
+<div class="main">
     <div class="leaderboards" *ngIf="leaderboards">
         <div>
             <div>
                 <div>Lunch Mates</div>
-                <div>Your current position: 7</div>
+                <div>Your current position: 7 <span>img arrow</span></div>
+                <div>
+                    <div>
+                        <div>img</div>
+                        <div>1</div>
+                        <div>Maria Rodriguez</div>
+                    </div>
+                    <div>
+                        <div>img</div>
+                        <div>2</div>
+                        <div>Harry Stevens</div>
+                    </div>
+                    <div>
+                        <div>img</div>
+                        <div>3</div>
+                        <div>Luke Jones</div>
+                    </div>
+                </div>
             </div>
             <div>
                 <div>Online Sales Team</div>
-                <div>Your current position: 1</div>
+                <div>Your current position: 1 <span>img arrow</span></div>
                 <div>
                     <div>
                         <div>img</div>

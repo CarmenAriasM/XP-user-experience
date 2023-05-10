@@ -1,6 +1,5 @@
 /* First container styles (score figures) */
 .page-title {
-    padding-top: 20px;
     margin-bottom: 30px;
 }
 .first-container {
@@ -62,4 +61,32 @@
 }
 .flex-container div:first-of-type {
     background-color: var(--pastel-orange);
+}
+/* Sections titles and Leaderboards styles */
+.sections {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+.underline {
+    width: 80%;
+    border-bottom: 3px solid var(--orange);
+    padding-top: 5px;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.grey-title {
+    color: grey;
+    padding-bottom: 8px;
+}
+.black-title {
+    color: black;
+}
+.main {
+    background-color: var(--white);
 }
