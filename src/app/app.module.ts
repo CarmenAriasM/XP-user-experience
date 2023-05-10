@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegPageComponent } from './components/reg-page/reg-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
+import { RoutesComponent } from './components/routes/routes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     FooterComponent,
     RegPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RoutesComponent
   ],
   imports: [
     BrowserModule,

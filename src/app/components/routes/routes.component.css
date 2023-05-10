@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    height: 70px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    max-width: 500px;
+}
+.icon-container {
+    display: flex;
+    justify-content: center;
+}

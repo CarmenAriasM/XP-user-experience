@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegPageComponent } from './components/reg-page/reg-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RoutesComponent } from './components/routes/routes.component';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'criochfort', component: RegPageComponent },
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'routes', component: RoutesComponent },
 
 
   { path: '**', redirectTo: 'not-found' },

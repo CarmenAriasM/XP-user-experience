@@ -19,24 +19,26 @@ html, body {
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: var(--light-yellow);
+}
 app-intro, app-login, app-reg-page {
   width: 100%;
   height: 100%;
   display: block;
-  background-color: var(--red);
 }
-app-login, app-home, app-reg-page {
-  background-color: var(--light-yellow);
+app-intro {
+  background-color: var(--red);
 }
 input {
   text-align: center;
   color: var(--red);
 }
-/* app-home {
-  height: calc(100% + 20%);
-} */
 app-footer {
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
 }
 app-reg-page {
   display: flex  !important;
@@ -135,4 +137,10 @@ input::placeholder {
 input::placeholder, .login-btn, .first-access-btn {
   font-size: 17px;
   font-weight: 300;
+}
+/*  General miscellaneous styles */
+.page-title {
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 20px;
 }
