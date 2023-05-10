@@ -1,5 +1,6 @@
 .container {
     padding: 20px;
+    padding-top: 40px;
 }
 .flex-container {
     display: flex;
@@ -15,7 +16,7 @@
     background-color: var(--white);
     border-radius: 16px;
     margin-bottom: 20px;
-    height: 70px;
+    height: 85px;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
@@ -24,4 +25,7 @@
 .icon-container {
     display: flex;
     justify-content: center;
+}
+.page-title {
+    margin-bottom: 30px;
 }
