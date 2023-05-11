@@ -8,6 +8,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RoutesComponent } from './components/routes/routes.component';
 import { LeaderboardsComponent } from './components/leaderboards/leaderboards.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
+import { RewardsComponent } from './components/rewards/rewards.component';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'routes', component: RoutesComponent },
   { path: 'leaderboards', component: LeaderboardsComponent },
   { path: 'how-it-works', component: HowItWorksComponent },
+  { path: 'rewards', component: RewardsComponent },
 
 
   { path: '**', redirectTo: 'not-found' },

@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { RoutesComponent } from './components/routes/routes.component';
 import { LeaderboardsComponent } from './components/leaderboards/leaderboards.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
+import { RewardsComponent } from './components/rewards/rewards.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
     NotFoundComponent,
     RoutesComponent,
     LeaderboardsComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    RewardsComponent
   ],
   imports: [
     BrowserModule,
