@@ -70,7 +70,7 @@
 /* Sections titles and Leaderboards styles */
 .sections {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 20px;
 }
 .underline {
@@ -102,6 +102,8 @@
 /*  Leaderboard containers */
 .leaderboards {
     padding: 30px 7px;
+}
+.friends, .leaderboards {
     max-width: 600px;
     width: 100%;
 }
@@ -154,15 +156,54 @@
 .leaderboard .person:nth-child(odd) {
     background-color: var(--light-yellow);
 }
-.leaderboard .person {
+.person {
     display: flex;
     gap: 10px;
     font-size: 14px;
     padding: 8px;
     align-items: center;
 }
-.leaderboard .person img {
+.person img {
     border-radius: 20px;
     width: 25px;
     height: 25px;
+}
+.friends {
+    width: 100%;
+    padding: 15px;
+}
+.friend {
+    display: flex;
+    align-items: center;
+}
+.action-buttons {
+    font-size: 7px;
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    justify-content: flex-end;
+}
+.action-buttons div {
+    background-color: white;
+    border: 2px solid var(--pastel-orange);
+    border-radius: 16px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 7px 5px;
+    cursor: pointer;
+}
+.action-buttons div:first-of-type {
+    background-color: var(--pastel-orange);
+}
+.person-name {
+    width: 100%;
+    font-weight: 600;
+    margin-left: 5px;
+    max-width: 130px;
+}
+.friend .person img {
+    width: 40px;
+    height: 40px;
 }

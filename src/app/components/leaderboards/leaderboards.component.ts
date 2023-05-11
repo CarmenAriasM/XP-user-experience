@@ -23,4 +23,13 @@ export class LeaderboardsComponent {
       this.showOnlineSalesLeaderboard = !this.showOnlineSalesLeaderboard;
     }
   }
+  toggleLeaderboards(section: string) {
+    if(section == 'friends') {
+      this.leaderboards = false;
+      this.showLunchLeaderboard = false;
+      this.showOnlineSalesLeaderboard = false;
+    } else {
+      this.leaderboards = true;
+    }
+  }
 }
