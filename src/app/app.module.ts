@@ -14,6 +14,8 @@ import { RoutesComponent } from './components/routes/routes.component';
 import { LeaderboardsComponent } from './components/leaderboards/leaderboards.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 import { RewardsComponent } from './components/rewards/rewards.component';
+import { QrCodeComponent } from './components/qr-code/qr-code.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RewardsComponent } from './components/rewards/rewards.component';
     RoutesComponent,
     LeaderboardsComponent,
     HowItWorksComponent,
-    RewardsComponent
+    RewardsComponent,
+    QrCodeComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

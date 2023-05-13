@@ -12,7 +12,7 @@
     position: absolute;
     bottom: 5px;
     padding: 10px;
-    background-color: var(--light-yellow);
+    background-color: transparent;
     border-radius: 9999px;
 }
 .center-item-div {
@@ -33,4 +33,7 @@
 }
 .pinkBg div {
     background-color: var(--pink);
+}
+.orangeBg {
+    background-color: #D4654B;
 }

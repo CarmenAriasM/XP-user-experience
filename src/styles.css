@@ -27,8 +27,9 @@ app-intro, app-login, app-reg-page {
   height: 100%;
   display: block;
 }
-app-intro {
+app-intro, app-qr-code {
   background-color: var(--red);
+  height: 100%;
 }
 input {
   text-align: center;

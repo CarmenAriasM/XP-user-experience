@@ -9,6 +9,7 @@ import { RoutesComponent } from './components/routes/routes.component';
 import { LeaderboardsComponent } from './components/leaderboards/leaderboards.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 import { RewardsComponent } from './components/rewards/rewards.component';
+import { QrCodeComponent } from './components/qr-code/qr-code.component';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'leaderboards', component: LeaderboardsComponent },
   { path: 'how-it-works', component: HowItWorksComponent },
   { path: 'rewards', component: RewardsComponent },
+  { path: 'rewards/reward-code', component: QrCodeComponent },
 
 
   { path: '**', redirectTo: 'not-found' },
