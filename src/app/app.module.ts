@@ -16,6 +16,7 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
 import { RewardsComponent } from './components/rewards/rewards.component';
 import { QrCodeComponent } from './components/qr-code/qr-code.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { RoutesArticlesComponent } from './components/routes-articles/routes-articles.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NotificationsComponent } from './components/notifications/notifications
     HowItWorksComponent,
     RewardsComponent,
     QrCodeComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    RoutesArticlesComponent
   ],
   imports: [
     BrowserModule,

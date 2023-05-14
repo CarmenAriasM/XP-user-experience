@@ -11,6 +11,7 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
 import { RewardsComponent } from './components/rewards/rewards.component';
 import { QrCodeComponent } from './components/qr-code/qr-code.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { RoutesArticlesComponent } from './components/routes-articles/routes-articles.component';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'criochfort', component: RegPageComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'routes', component: RoutesComponent },
+  { path: 'routes/articles', component: RoutesArticlesComponent },
   { path: 'leaderboards', component: LeaderboardsComponent },
   { path: 'how-it-works', component: HowItWorksComponent },
   { path: 'rewards', component: RewardsComponent },
