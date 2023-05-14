@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-leaderboards',
@@ -9,6 +10,15 @@ export class LeaderboardsComponent {
   leaderboards: boolean = true;
   showLunchLeaderboard: boolean = false;
   showOnlineSalesLeaderboard: boolean = false;
+  previousUrl;
+  constructor(public router: Router) {
+    this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
+  }
+  ngOnInit() {
+    if(this.previousUrl == '/notifications') {
+      this.leaderboards = false;
+    }
+  }
   showLeaderboard(leaderboard: string) {
     let arrow = document.getElementById(leaderboard + '-arrow') as HTMLElement | null;
     if(arrow?.classList.contains('rotated')) {
