@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-notifications',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./notifications.component.css']
 })
 export class NotificationsComponent {
-
+  current_time: String | undefined;
+  ngOnInit() {
+    let date = new Date();
+    this.current_time = date.getHours() + ':' + date.getMinutes();
+  }
 }

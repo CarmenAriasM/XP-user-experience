@@ -38,7 +38,7 @@
 }
 .date {
     display: flex;
-    gap: 7px;
+    gap: 5px;
 }
 .message, .date {
     color: #A6A6A6;

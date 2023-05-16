@@ -28,3 +28,36 @@
 .page-title {
     margin-bottom: 30px;
 }
+.orange-bg {
+    background-color: var(--pastel-orange);
+    color: white;
+}
+.alert {
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    top: 10%;
+    background-color: white;
+    border: 3px solid var(--red);
+    border-radius: 20px;
+    font-size: 17px;
+    padding: 10px;
+    color: var(--red);
+}
+.confirmation-btn {
+    border: 2px solid var(--light-yellow);
+    transition: all 300ms;
+}
+.confirmation-btn:hover {
+    background-color: var(--pastel-orange);
+    color: var(--red);
+}
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.inner div {
+    display: flex;
+    gap: 10px;
+}

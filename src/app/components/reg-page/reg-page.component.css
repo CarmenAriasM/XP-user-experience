@@ -94,6 +94,29 @@ img {
     align-items: center;
     margin-top: 10%;
 }
+select {
+    width: 244px;
+    height: 42px;
+    border: 2px solid var(--red);
+    border-radius: 21.5px;
+    background: transparent;
+    text-align: center;
+    color: var(--red);
+    appearance: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.select-container {
+    position: relative;
+}
+.icon-arrow {
+    mask: url(/assets/icons/arrow.svg) no-repeat center;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    pointer-events: none;
+}
 @media (min-width: 550px) {
     .grid-container {
         grid-template-columns: repeat(3, 1fr);

@@ -26,21 +26,22 @@ export class RegPageComponent {
     {id: 12, name: 'Other', image: 'assets/college-logo.png'}
   ]
   personas = [
-    {id: 1, name: 'Persona 1', image: 'assets/persona.png'},
-    {id: 2, name: 'Persona 2', image: 'assets/persona.png'},
-    {id: 3, name: 'Persona 3', image: 'assets/persona.png'},
-    {id: 4, name: 'Persona 4', image: 'assets/persona.png'},
-    {id: 5, name: 'Persona 5', image: 'assets/persona.png'},
-    {id: 6, name: 'Persona 6', image: 'assets/persona.png'},
-    {id: 7, name: 'Persona 7', image: 'assets/persona.png'},
-    {id: 8, name: 'Persona 8', image: 'assets/persona.png'},
-    {id: 9, name: 'Persona 9', image: 'assets/persona.png'},
-    {id: 10, name: 'Persona 10', image: 'assets/persona.png'},
-    {id: 11, name: 'Persona 11', image: 'assets/persona.png'},
-    {id: 12, name: 'Other', image: 'assets/persona.png'}
+    {id_: 1, id: 'a', name: 'Persona 1', image: 'assets/persona.png'},
+    {id_: 2, id: 'b', name: 'Persona 2', image: 'assets/persona.png'},
+    {id_: 3, id: 'c', name: 'Persona 3', image: 'assets/persona.png'},
+    {id_: 4, id: 'd', name: 'Persona 4', image: 'assets/persona.png'},
+    {id_: 5, id: 'e', name: 'Persona 5', image: 'assets/persona.png'},
+    {id_: 6, id: 'f', name: 'Persona 6', image: 'assets/persona.png'},
+    {id_: 7, id: 'g', name: 'Persona 7', image: 'assets/persona.png'},
+    {id_: 8, id: 'h', name: 'Persona 8', image: 'assets/persona.png'}
+    /* {id_: 9, id: 'a', name: 'Persona 9', image: 'assets/persona.png'},
+    {id_: 10, id: 'a', name: 'Persona 10', image: 'assets/persona.png'},
+    {id_: 11, id: 'a', name: 'Persona 11', image: 'assets/persona.png'},
+    {id_: 12, id: 'a', name: 'Other', image: 'assets/persona.png'} */
   ]
   selectedCollege: number | undefined;
-  selectedPersona: number | undefined;
+  selectedPersona: string | undefined;
+  selectedGender: string | undefined = 'female';
   personDetails: Object = {name: '', uid: ''};
   personName: any;
   personUid: any;
@@ -122,12 +123,15 @@ export class RegPageComponent {
     this.selectedCollege = id;
     this.goToPersonaSelection();
   }
-  choosePersona(id: number) {
+  choosePersona(id: string) {
     for(let i = 0; i < 13; i++) {
       document.getElementById('imagePersona' + i)?.classList.remove('border')
     }
     document.getElementById('imagePersona' + id)?.classList.add('border');
     this.selectedPersona = id;
+  }
+  chooseGender(gender: string) {
+    this.selectedGender = gender;
   }
   // TODO Popup message 
  /*  openPopUp() {
@@ -136,7 +140,7 @@ export class RegPageComponent {
   // END TODO Popup message 
   sendToDB() {
     this.requestJson = {
-      ...this.personDetails, college_id: this.selectedCollege, persona_id: this.selectedPersona
+      ...this.personDetails, college_id: this.selectedCollege, persona_id: this.selectedPersona, gender: this.selectedGender
     }
     console.log(this.requestJson)
     // TODO Popup message 
