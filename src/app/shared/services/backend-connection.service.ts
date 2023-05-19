@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
+import { environment } from 'src/environment/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class BackendConnectionService {
-  apiUrl = 'https://34.147.140.133:80/';
+  apiUrl = environment.webapiurl;
   constructor(private http: HttpClient) { }
   getData(data: any): Observable<any> {
-    return this.http.post(this.apiUrl + 'User/login', data).pipe(catchError(this.handleError));
+    return this.http.post( this.apiUrl + 'User/login', data).pipe(catchError(this.handleError));
   } 
-/*   getData(data:any) {
+  /* getData(data:any) {
     return fetch(this.apiUrl, {
     method: 'POST',
     body: JSON.stringify(data)
