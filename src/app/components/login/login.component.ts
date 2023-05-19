@@ -16,8 +16,8 @@ export class LoginComponent {
     const formData = new FormData();
         formData.append('userName', 'NamePerson');
         formData.append('password', 'secret1234');
-    this.backendService.getData(formData).subscribe((data: any) => {
+    this.backendService.getData(formData)/* .subscribe((data: any) => {
       console.log(data)
-    })
+    }) */
   }
 }

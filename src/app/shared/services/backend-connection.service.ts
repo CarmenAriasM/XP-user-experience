@@ -7,8 +7,14 @@ import { Observable, catchError, throwError } from 'rxjs';
 export class BackendConnectionService {
   apiUrl = 'https://34.147.140.133:80/';
   constructor(private http: HttpClient) { }
-  getData(data: any): Observable<any> {
+ /*  getData(data: any): Observable<any> {
     return this.http.post(this.apiUrl + 'User/login', data).pipe(catchError(this.handleError));
+  } */
+  getData(data:any) {
+    return fetch(this.apiUrl, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  });
   }
   public handleError(err: HttpErrorResponse) {
     let errMsg:string='';
