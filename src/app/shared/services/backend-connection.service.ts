@@ -5,7 +5,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class BackendConnectionService {
-  apiUrl = 'http://34.147.140.133:80/';
+  apiUrl = 'https://34.147.140.133:80/';
   constructor(private http: HttpClient) { }
   getData(data: any): Observable<any> {
     return this.http.post(this.apiUrl + 'User/login', data).pipe(catchError(this.handleError));
