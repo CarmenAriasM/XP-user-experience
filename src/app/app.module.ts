@@ -17,6 +17,7 @@ import { RewardsComponent } from './components/rewards/rewards.component';
 import { QrCodeComponent } from './components/qr-code/qr-code.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { RoutesArticlesComponent } from './components/routes-articles/routes-articles.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RoutesArticlesComponent } from './components/routes-articles/routes-art
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
