@@ -13,7 +13,7 @@ export class LoginComponent {
     this.router.navigate(['home']);
   }
   sendData() {
-    this.backendService.getData({data: 'nothing'}).subscribe((data: any) => {
+    this.backendService.getData({username: 'carmen', password: '1234secret'}).subscribe((data: any) => {
       console.log(data)
     })
   }
