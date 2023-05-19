@@ -20,6 +20,6 @@ RUN mkdir -p /usr/share/nginx/www/_ah && \
     echo "healthy" > /usr/share/nginx/www/_ah/health
 
 # Finally, all static assets.
-ADD dist/ /usr/share/nginx/www/sampleapp
+ADD dist/ /usr/share/nginx/www/xp-user-experience
 
-CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/www/sampleapp/assets/envconfig.template.js > /usr/share/nginx/www/sampleapp/assets/envconfig.js && exec nginx -g 'daemon off;'"]
+CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/www/xp-user-experience/assets/envconfig.template.js > /usr/share/nginx/www/xp-user-experience/assets/envconfig.js && exec nginx -g 'daemon off;'"]
