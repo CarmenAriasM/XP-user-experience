@@ -11,6 +11,7 @@ export class LoginComponent {
   constructor(public router: Router, public backendService: BackendConnectionService ) {}
   goToHomePage() {
     this.router.navigate(['home']);
+    this.sendData()
   }
   sendData() {
     const formData = new FormData();
