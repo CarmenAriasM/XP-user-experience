@@ -6,24 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  showBackData1: boolean = false;
-  showBackData2: boolean = false;
 
-  toggleData(number: number) {
-    if(number == 1) {
-      this.showBackData1 = true;
-      this.showBackData2 = false;
-    } else {
-      this.showBackData2 = true;
-      this.showBackData1 = false;
+
+  user: Object | undefined;
+  wasItAsked: boolean = false;
+  requestJson: Object | undefined;
+  transport!: string;
+  openPopUp() {
+    this.wasItAsked = true;
+  }
+  closePopUp() {
+    this.wasItAsked = false;
+    document.getElementById(this.transport)?.classList.remove('orange-bg')
+  }
+  chooseTransport(value: string) {
+    console.log(value)
+    // If user hasnt chosen transport mode yet, then ->
+    document.getElementById(value)?.classList.add('orange-bg')
+    this.transport = value;
+    this.openPopUp()
+  }
+  sendToDB() {
+    this.requestJson = {
+      transport_mode: this.transport
     }
-  }
-  hideAllData() {
-    this.showBackData1 = false;
-    this.showBackData2 = false;
-  }
-  preventDefault(e: Event) {
-    e.preventDefault();  
-    e.stopPropagation();
+    console.log(this.requestJson)
+    this.wasItAsked = false; 
   }
 }

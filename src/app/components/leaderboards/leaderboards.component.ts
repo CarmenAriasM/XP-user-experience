@@ -11,6 +11,8 @@ export class LeaderboardsComponent {
   showLunchLeaderboard: boolean = false;
   showOnlineSalesLeaderboard: boolean = false;
   previousUrl;
+  denied: boolean = false;
+  accepted: boolean = false;
   constructor(public router: Router) {
     this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
   }
@@ -41,5 +43,11 @@ export class LeaderboardsComponent {
     } else {
       this.leaderboards = true;
     }
+  }
+  denyRequest() {
+    this.denied = true;
+  }
+  acceptRequest() {
+    this.accepted = true;
   }
 }

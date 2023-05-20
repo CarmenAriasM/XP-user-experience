@@ -6,32 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./routes.component.css']
 })
 export class RoutesComponent {
-  user: Object | undefined;
-  wasItAsked: boolean = false;
-  requestJson: Object | undefined;
-  transport!: string;
+  showBackData1: boolean = false;
+  showBackData2: boolean = false;
   ngOnInit() {
     // Get user from api and assign it to user variable
   }
-  openPopUp() {
-    this.wasItAsked = true;
-  }
-  closePopUp() {
-    this.wasItAsked = false;
-    document.getElementById(this.transport)?.classList.remove('orange-bg')
-  }
-  chooseTransport(value: string) {
-    console.log(value)
-    // If user hasnt chosen transport mode yet, then ->
-    document.getElementById(value)?.classList.add('orange-bg')
-    this.transport = value;
-    this.openPopUp()
-  }
-  sendToDB() {
-    this.requestJson = {
-      transport_mode: this.transport
+  toggleData(number: number) {
+    if(number == 1) {
+      this.showBackData1 = !this.showBackData1;
+      this.showBackData2 = false;
+    } else {
+      this.showBackData2 = !this.showBackData2;
+      this.showBackData1 = false;
     }
-    console.log(this.requestJson)
-    this.wasItAsked = false; 
+  }
+  hideAllData() {
+    this.showBackData1 = false;
+    this.showBackData2 = false;
+  }
+  preventDefault(e: Event) {
+    e.preventDefault();  
+    e.stopPropagation();
   }
 }
