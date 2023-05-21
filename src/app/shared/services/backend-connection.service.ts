@@ -7,7 +7,7 @@ import { environment } from 'src/environment/environment';
   providedIn: 'root'
 })
 export class BackendConnectionService {
-  apiUrl = 'https://34.147.140.133/';
+  apiUrl = 'https://back.rail-travel-project.com/';
   constructor(private http: HttpClient) { }
   getData(data: any): Observable<any> {
     return this.http.post( this.apiUrl + 'User/login', data).pipe(catchError(this.handleError));
