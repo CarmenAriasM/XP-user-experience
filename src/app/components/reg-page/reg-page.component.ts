@@ -26,14 +26,13 @@ export class RegPageComponent {
     {id: 12, name: 'Other', image: 'assets/college-logo.png'}
   ]
   personas = [
-    {id_: 1, id: 'a', name: 'Persona 1', image: 'assets/persona.png'},
-    {id_: 2, id: 'b', name: 'Persona 2', image: 'assets/persona.png'},
-    {id_: 3, id: 'c', name: 'Persona 3', image: 'assets/persona.png'},
-    {id_: 4, id: 'd', name: 'Persona 4', image: 'assets/persona.png'},
-    {id_: 5, id: 'e', name: 'Persona 5', image: 'assets/persona.png'},
-    {id_: 6, id: 'f', name: 'Persona 6', image: 'assets/persona.png'},
-    {id_: 7, id: 'g', name: 'Persona 7', image: 'assets/persona.png'},
-    {id_: 8, id: 'h', name: 'Persona 8', image: 'assets/persona.png'}
+    {id_: 1, id: 'a', name: 'Persona A', image: 'assets/persona.png'},
+    {id_: 2, id: 'b', name: 'Persona B', image: 'assets/persona.png'},
+    {id_: 3, id: 'c', name: 'Persona C', image: 'assets/persona.png'},
+    {id_: 4, id: 'd', name: 'Persona D', image: 'assets/persona.png'},
+    {id_: 5, id: 'e', name: 'Persona E', image: 'assets/persona.png'},
+    {id_: 6, id: 'f', name: 'Persona F', image: 'assets/persona.png'},
+    {id_: 7, id: 'g', name: 'Persona G', image: 'assets/persona.png'},
     /* {id_: 9, id: 'a', name: 'Persona 9', image: 'assets/persona.png'},
     {id_: 10, id: 'a', name: 'Persona 10', image: 'assets/persona.png'},
     {id_: 11, id: 'a', name: 'Persona 11', image: 'assets/persona.png'},
@@ -130,9 +129,11 @@ export class RegPageComponent {
     document.getElementById('imagePersona' + id)?.classList.add('border');
     this.selectedPersona = id;
   }
-  chooseGender(gender: string) {
+  // TODO Choose gender 
+  /* chooseGender(gender: string) {
     this.selectedGender = gender;
-  }
+  } */
+  // END TODO Choose gender 
   // TODO Popup message 
  /*  openPopUp() {
     this.wasItAsked = true;

@@ -2,13 +2,13 @@
     <div class="form">
         <input type="text" name="" id="person-name" placeholder="NAME" [(ngModel)]="personName">
         <input type="text" name="" id="person-uid" placeholder="UID" [(ngModel)]="personUid">
-        <div class="select-container">
+        <!-- <div class="select-container">
             <select name="" #gender id="gender" (click)="chooseGender(gender.value)">
                 <option value="female">Female</option>
                 <option value="male">Male</option>
             </select>
             <span class="icon icon-arrow"></span>
-        </div>
+        </div> -->
         <button class="login-btn" type="button" (click)="goToUniversitySelection()" [disabled]="!personName || !personUid"  [ngClass]="!personName || !personUid ? 'cancel-btn' : 'login-btn'">ENTER</button>
     </div>
 </div>
