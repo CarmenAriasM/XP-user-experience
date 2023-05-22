@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
 })
 export class HomeComponent {
   data: any;
-  constructor(public localStorage: LocalStorageService) {}
+  constructor(public localStorage: LocalStorageService, public backendService: BackendConnectionService) {}
   ngOnInit() {
     if(this.localStorage.get('userData')) {
       this.data = this.localStorage.get('userData');
@@ -19,7 +20,6 @@ export class HomeComponent {
   }
   user: Object | undefined;
   wasItAsked: boolean = false;
-  requestJson: Object | undefined;
   transport!: string;
   openPopUp() {
     this.wasItAsked = true;
@@ -36,10 +36,13 @@ export class HomeComponent {
     this.openPopUp()
   }
   sendToDB() {
-    this.requestJson = {
-      transport_mode: this.transport
-    }
-    console.log(this.requestJson)
+    const formData = new FormData();
+    formData.append('travelMode', this.transport);
+    this.backendService.setTravelMode(formData).subscribe((data: any) => {
+      console.log(data)
+    }, (error: Error) => { 
+      console.log(error)
+    }); 
     this.wasItAsked = false; 
   }
 }
