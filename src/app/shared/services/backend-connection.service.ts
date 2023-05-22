@@ -7,17 +7,15 @@ import { environment } from 'src/environment/environment';
   providedIn: 'root'
 })
 export class BackendConnectionService {
-  apiUrl = 'https://back.rail-travel-project.com/';
+  apiUrl = 'https://back.rail-travel-project.com/'; //https://34.147.140.133/
   constructor(private http: HttpClient) { }
-  getData(data: any): Observable<any> {
+  login(data: any): Observable<any> {
     return this.http.post( this.apiUrl + 'User/login', data).pipe(catchError(this.handleError));
   } 
-  /* getData(data:any) {
-    return fetch(this.apiUrl, {
-    method: 'POST',
-    body: JSON.stringify(data)
-  });
-  } */
+  register(data: any): Observable<any> {
+    return this.http.post( this.apiUrl + 'User/signUp ', data).pipe(catchError(this.handleError));
+  } 
+
   public handleError(err: HttpErrorResponse) {
     let errMsg:string='';
     if (err.error instanceof Error) {

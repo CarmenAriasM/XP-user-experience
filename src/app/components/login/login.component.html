@@ -1,10 +1,10 @@
-<div class="main-container">
+<form class="main-container" [formGroup]="form">
     <div class="form">
-        <input type="text" name="" id="" placeholder="NAME">
-        <input type="text" name="" id="" placeholder="UID">
+        <input type="text" name="" id="" placeholder="NAME" formControlName="userName">
+        <input type="number" name="" id="" placeholder="UID" formControlName="password">
         <button class="login-btn" type="button" (click)="goToHomePage()">LOGIN</button><!-- sendData() -->
     </div>
     <div class="second-form">
         <div class="recover-password">FORGOT MY PASSWORD</div>
     </div>
-</div>
+</form>

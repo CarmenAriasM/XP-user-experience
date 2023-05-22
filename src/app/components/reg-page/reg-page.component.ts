@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-reg-page',
@@ -26,29 +28,28 @@ export class RegPageComponent {
     {id: 12, name: 'Other', image: 'assets/college-logo.png'}
   ]
   personas = [
-    {id_: 1, id: 'a', name: 'Persona A', image: 'assets/persona.png'},
-    {id_: 2, id: 'b', name: 'Persona B', image: 'assets/persona.png'},
-    {id_: 3, id: 'c', name: 'Persona C', image: 'assets/persona.png'},
-    {id_: 4, id: 'd', name: 'Persona D', image: 'assets/persona.png'},
-    {id_: 5, id: 'e', name: 'Persona E', image: 'assets/persona.png'},
-    {id_: 6, id: 'f', name: 'Persona F', image: 'assets/persona.png'},
-    {id_: 7, id: 'g', name: 'Persona G', image: 'assets/persona.png'},
-    /* {id_: 9, id: 'a', name: 'Persona 9', image: 'assets/persona.png'},
-    {id_: 10, id: 'a', name: 'Persona 10', image: 'assets/persona.png'},
-    {id_: 11, id: 'a', name: 'Persona 11', image: 'assets/persona.png'},
-    {id_: 12, id: 'a', name: 'Other', image: 'assets/persona.png'} */
+    {id_: 1, id: 'A', name: 'Persona A', image: 'assets/persona.png'},
+    {id_: 2, id: 'B', name: 'Persona B', image: 'assets/persona.png'},
+    {id_: 3, id: 'C', name: 'Persona C', image: 'assets/persona.png'},
+    {id_: 4, id: 'D', name: 'Persona D', image: 'assets/persona.png'},
+    {id_: 5, id: 'E', name: 'Persona E', image: 'assets/persona.png'},
+    {id_: 6, id: 'F', name: 'Persona F', image: 'assets/persona.png'},
+    {id_: 7, id: 'G', name: 'Persona G', image: 'assets/persona.png'}
   ]
-  selectedCollege: number | undefined;
-  selectedPersona: string | undefined;
-  selectedGender: string | undefined = 'female';
-  personDetails: Object = {name: '', uid: ''};
-  personName: any;
-  personUid: any;
-  requestJson: any;
+  selectedCollege!: string;
+  selectedPersona!: string;
+
   // TODO Popup message 
   // wasItAsked: boolean = false;
   // END TODO Popup message 
 
+  form: any;
+  constructor(private fb: FormBuilder, public backendService: BackendConnectionService) {
+    this.form = this.fb.group({
+      userName: [''],
+      IdUID:  ['']
+    })
+  }
   // Show form
   goToForm() {
     this.hideContainer('persona-container', 'persona')
@@ -57,18 +58,18 @@ export class RegPageComponent {
   }
   // Show college options to choose from
   goToUniversitySelection() {
-    this.personDetails = { name: this.personName, uid: this.personUid }
     this.hideContainer('reg-container', 'form')
     this.hideContainer('persona-container', 'persona')
     this.showContainer('college-container', 'college')
+    this.selectedPersona = '';
+    this.selectedCollege = '';
   }
   // Show persona options to choose from
   goToPersonaSelection() {
     this.hideContainer('college-container', 'college')
     this.showContainer('persona-container', 'persona')
-    this.requestJson = {
-      ...this.personDetails, college_id: this.selectedCollege
-    }
+    this.selectedPersona = '';
+    this.selectedCollege = '';
   }
   // Hide form or college container
   hideContainer(container: string, variable: string) {
@@ -114,7 +115,7 @@ export class RegPageComponent {
       }, 900);
     }
   }
-  chooseCollege(id: number) {
+  chooseCollege(id: any) {
     for(let i = 0; i < 13; i++) {
       document.getElementById('image' + i)?.classList.remove('border')
     }
@@ -129,29 +130,24 @@ export class RegPageComponent {
     document.getElementById('imagePersona' + id)?.classList.add('border');
     this.selectedPersona = id;
   }
-  // TODO Choose gender 
-  /* chooseGender(gender: string) {
-    this.selectedGender = gender;
-  } */
-  // END TODO Choose gender 
-  // TODO Popup message 
- /*  openPopUp() {
-    this.wasItAsked = true;
-  } */
-  // END TODO Popup message 
   sendToDB() {
-    this.requestJson = {
-      ...this.personDetails, college_id: this.selectedCollege, persona_id: this.selectedPersona, gender: this.selectedGender
-    }
-    console.log(this.requestJson)
+    const formData = new FormData();
+    formData.append('userName', this.form.get('userName').value );
+    formData.append('IdUID', this.form.get('IdUID').value );
+    formData.append('IdUniversity', this.selectedCollege);
+    formData.append('IdPersona', this.selectedPersona);
+    this.backendService.register(formData).subscribe((data: any) => {
+      console.log(data)
+    }, (error: Error) => { 
+      console.log(error)
+    }); 
     // TODO Popup message 
     // this.wasItAsked = false; 
-    this.personDetails = {}
-    this.selectedCollege = undefined;
-    this.selectedPersona = undefined;
-    this.personName = '';
-    this.personUid = '';
-    this.requestJson = {};
+    this.selectedCollege = '';
+    this.selectedPersona = '';
+    this.form.controls['userName'].reset();
+    this.form.controls['IdUID'].reset();
+
     this.hideContainer('persona-container', 'persona')
     setTimeout(() => {
       this.showThanks = true;
@@ -161,9 +157,5 @@ export class RegPageComponent {
       this.goToForm()
     }, 3000);
   }
-  // TODO Popup message 
-  /* closePopUp() {
-    this.wasItAsked = false;
-  } */
-  // END TODO Popup message 
+
 }

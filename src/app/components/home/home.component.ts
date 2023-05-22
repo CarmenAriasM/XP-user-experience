@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  data: any;
+  constructor(public localStorage: LocalStorageService) {}
+  ngOnInit() {
+    if(this.localStorage.get('userData')) {
+      this.data = this.localStorage.get('userData');
+      this.data = JSON.stringify(this.data);
+      console.log(this.data)
+    }
 
-
+  }
   user: Object | undefined;
   wasItAsked: boolean = false;
   requestJson: Object | undefined;

@@ -9,7 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegPageComponent } from './components/reg-page/reg-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoutesComponent } from './components/routes/routes.component';
 import { LeaderboardsComponent } from './components/leaderboards/leaderboards.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
@@ -40,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
