@@ -69,7 +69,6 @@ export class RegPageComponent {
     this.hideContainer('college-container', 'college')
     this.showContainer('persona-container', 'persona')
     this.selectedPersona = '';
-    this.selectedCollege = '';
   }
   // Hide form or college container
   hideContainer(container: string, variable: string) {
