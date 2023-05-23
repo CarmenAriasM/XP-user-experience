@@ -143,3 +143,7 @@ input {
 .points-graph svg {
     width: 100%;
 }
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}

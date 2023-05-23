@@ -29,10 +29,11 @@ export class HomeComponent {
   }
   chooseTransport(value: string) {
     console.log(value)
-    // If user hasnt chosen transport mode yet, then ->
-    document.getElementById(value)?.classList.add('orange-bg')
-    this.transport = value;
-    this.openPopUp()
+    if(this.data.travelMode != 0) {
+      document.getElementById(value)?.classList.add('orange-bg')
+      this.transport = value;
+      this.openPopUp()
+    }
   }
   sendToDB() {
     const formData = new FormData();
