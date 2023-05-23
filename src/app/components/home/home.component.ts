@@ -38,6 +38,7 @@ export class HomeComponent {
   sendToDB() {
     const formData = new FormData();
     formData.append('travelMode', this.transport);
+    formData.append('idUID', this.data.idUID);
     this.backendService.setTravelMode(formData).subscribe((data: any) => {
       console.log(data)
     }, (error: Error) => { 
