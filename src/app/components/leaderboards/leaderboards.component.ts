@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { colleges } from 'src/app/shared/services/colleges';
 
 @Component({
   selector: 'app-leaderboards',
@@ -13,12 +15,21 @@ export class LeaderboardsComponent {
   previousUrl;
   denied: boolean = false;
   accepted: boolean = false;
-  constructor(public router: Router) {
+  collegeName: any;
+  data: any;
+  constructor(public router: Router, public localStorage: LocalStorageService) {
     this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
   }
   ngOnInit() {
     if(this.previousUrl == '/notifications') {
       this.leaderboards = false;
+    }
+    if(this.localStorage.get('userData')) {
+      this.data = this.localStorage.get('userData');
+      this.data = JSON.parse(this.data);
+      console.log(this.data)
+      this.collegeName = colleges.filter(x => x.id == this.data.idUniversity);
+      console.log(this.collegeName)
     }
   }
   showLeaderboard(leaderboard: string) {

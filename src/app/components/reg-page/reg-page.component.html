@@ -20,8 +20,14 @@
     </div>
     <div id="persona-container" *ngIf="showPersona" class="main-div">
         <div>Please select your persona:</div>
-        <div class="grid-container">
-            <div *ngFor="let persona of personas" class="persona">
+        <div class="container-persona-first">
+            <div *ngFor="let persona of personas.slice(0, 4)" class="persona">
+                <div><img src="{{persona.image}}" alt="" id="imagePersona{{persona.id}}" (click)="choosePersona(persona.id)"></div>
+                <div>{{persona.name}}</div>
+            </div>
+        </div>
+        <div class="container-persona-second">
+            <div *ngFor="let persona of personas.slice(4, 7)" class="persona">
                 <div><img src="{{persona.image}}" alt="" id="imagePersona{{persona.id}}" (click)="choosePersona(persona.id)"></div>
                 <div>{{persona.name}}</div>
             </div>

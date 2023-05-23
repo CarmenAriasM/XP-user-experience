@@ -122,6 +122,10 @@ select {
     right: 20px;
     pointer-events: none;
 }
+.container-persona-first, .container-persona-second {
+    display: flex;
+    gap: 30px;
+}
 @media (min-width: 550px) {
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
@@ -129,6 +133,9 @@ select {
 }
 @media (min-width: 768px) {
     .grid-container {
-       grid-template-columns: repeat(5, 1fr);
-    }
+        grid-template-columns: repeat(4, 1fr);
+     }
+     .college:last-of-type {
+         grid-column: 1/5
+     }
 }

@@ -14,19 +14,20 @@ export class RegPageComponent {
   showPersona: boolean = false;
   showThanks: boolean = false;
   colleges = [
-    {id: 1, name: 'College 1', image: 'assets/college-logo.png'},
-    {id: 2, name: 'College 2', image: 'assets/college-logo.png'},
-    {id: 3, name: 'College 3', image: 'assets/college-logo.png'},
-    {id: 4, name: 'College 4', image: 'assets/college-logo.png'},
-    {id: 5, name: 'College 5', image: 'assets/college-logo.png'},
-    {id: 6, name: 'College 6', image: 'assets/college-logo.png'},
-    {id: 7, name: 'College 7', image: 'assets/college-logo.png'},
-    {id: 8, name: 'College 8', image: 'assets/college-logo.png'},
-    {id: 9, name: 'College 9', image: 'assets/college-logo.png'},
-    {id: 10, name: 'College 10', image: 'assets/college-logo.png'},
-    {id: 11, name: 'College 11', image: 'assets/college-logo.png'},
-    {id: 12, name: 'Other', image: 'assets/college-logo.png'}
-  ]
+    {id: 1, name: 'Alto', image: 'assets/colleges/college-logo-1.png'},
+    {id: 2, name: 'LiU', image: 'assets/colleges/college-logo-2.png'},
+    {id: 3, name: 'KIT', image: 'assets/colleges/college-logo-3.png'},
+    {id: 4, name: 'Mannheim', image: 'assets/colleges/college-logo-4.png'},
+    {id: 5, name: 'd.school', image: 'assets/colleges/college-logo-5.png'},
+    {id: 6, name: 'USP', image: 'assets/colleges/college-logo-6.png'},
+    {id: 7, name: 'HPI', image: 'assets/colleges/college-logo-7.png'},
+    {id: 8, name: "Côte d'Azur", image: 'assets/colleges/college-logo-8.png'},
+    {id: 9, name: 'Javeriana', image: 'assets/colleges/college-logo-9.png'},
+    {id: 10, name: 'ISDI', image: 'assets/colleges/college-logo-10.png'},
+    {id: 11, name: 'SUTD', image: 'assets/colleges/college-logo-11.png'},
+    {id: 12, name: 'TCD', image: 'assets/colleges/college-logo-12.png'},
+    {id: 13, name: 'Other', image: 'assets/colleges/college-logo-13.png'}
+  ];
   personas = [
     {id_: 1, id: 'A', name: 'Persona A', image: 'assets/persona.png'},
     {id_: 2, id: 'B', name: 'Persona B', image: 'assets/persona.png'},
@@ -35,7 +36,7 @@ export class RegPageComponent {
     {id_: 5, id: 'E', name: 'Persona E', image: 'assets/persona.png'},
     {id_: 6, id: 'F', name: 'Persona F', image: 'assets/persona.png'},
     {id_: 7, id: 'G', name: 'Persona G', image: 'assets/persona.png'}
-  ]
+  ];
   selectedCollege!: string;
   selectedPersona!: string;
 
