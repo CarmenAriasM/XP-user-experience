@@ -29,7 +29,7 @@ export class HomeComponent {
   }
   chooseTransport(value: string) {
     console.log(value)
-    if(this.data.travelMode != 0) {
+    if(this.data.travelMode == 0) {
       document.getElementById(value)?.classList.add('orange-bg')
       this.transport = value;
       this.openPopUp()
