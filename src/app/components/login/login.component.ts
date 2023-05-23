@@ -28,7 +28,9 @@ export class LoginComponent {
     this.backendService.login(formData).subscribe((data: any) => {
       console.log(data)
       this.localStorage.set('userData', JSON.stringify(data));
-      this.router.navigate(['home']);
+      setTimeout(() => {
+        this.router.navigate(['home']);
+      }, 200);
     }, (error: Error) => { 
       this.localStorage.remove('userData');
       console.log(error)
