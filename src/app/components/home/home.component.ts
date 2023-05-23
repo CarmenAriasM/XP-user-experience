@@ -13,10 +13,9 @@ export class HomeComponent {
   ngOnInit() {
     if(this.localStorage.get('userData')) {
       this.data = this.localStorage.get('userData');
-      this.data = JSON.stringify(this.data);
+      this.data = JSON.parse(this.data);
       console.log(this.data)
     }
-
   }
   user: Object | undefined;
   wasItAsked: boolean = false;
