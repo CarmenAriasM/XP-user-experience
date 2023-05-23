@@ -16,7 +16,7 @@ export class BackendConnectionService {
     return this.http.post( this.apiUrl + 'User/signUp ', data).pipe(catchError(this.handleError));
   } 
   setTravelMode(data: any): Observable<any> {
-    return this.http.post( this.apiUrl + 'User/set/travelMode ', data).pipe(catchError(this.handleError));
+    return this.http.put( this.apiUrl + 'User/set/travelMode ', data).pipe(catchError(this.handleError));
   } 
   
   public handleError(err: HttpErrorResponse) {
