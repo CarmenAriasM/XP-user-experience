@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
 import { FormBuilder } from '@angular/forms';
@@ -16,6 +16,9 @@ export class LoginComponent {
       userName: [''],
       password:  ['']
     })
+  }
+  ngOnInit() {
+    this.localStorage.remove('userData')
   }
   goToHomePage() {
     this.router.navigate(['home']); // delete this sentence when backend works so you have to login first
