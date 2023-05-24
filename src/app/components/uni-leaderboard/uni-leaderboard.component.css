@@ -98,9 +98,9 @@
     height: 160px;
     font-size: 45px;
 }
-/* .uni:first-of-type .position, .uni:nth-child(2) .position, .uni:nth-child(3) .position {
-    visibility: hidden;
-} */
+.uni:first-of-type, .uni:nth-child(2), .uni:nth-child(3) {
+    font-weight: 600;
+} 
 .uni:nth-child(2), .uni:nth-child(3) {
     height: 120px;
     font-size: 35px;
@@ -182,8 +182,8 @@
     align-items: center;
 }
 .icon-prize-filled {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
 }
 @media (min-width: 500px) {
      .main {
