@@ -11,11 +11,9 @@ export class HomeComponent {
   data: any;
   constructor(public localStorage: LocalStorageService, public backendService: BackendConnectionService) {}
   ngOnInit() {
-    if(this.localStorage.get('userData')) {
-      this.data = this.localStorage.get('userData');
-      this.data = JSON.parse(this.data);
-      console.log(this.data)
-    }
+    this.data = this.localStorage.get('userData');
+    this.data = JSON.parse(this.data);
+    console.log(this.data)
   }
   user: Object | undefined;
   wasItAsked: boolean = false;
