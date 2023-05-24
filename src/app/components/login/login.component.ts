@@ -27,10 +27,11 @@ export class LoginComponent {
     formData.append('IdUID', this.form.get('password').value );
     this.backendService.login(formData).subscribe((data: any) => {
       console.log(data)
+      this.localStorage.remove('userData')
       this.localStorage.set('userData', JSON.stringify(data));
       setTimeout(() => {
         this.router.navigate(['home']);
-      }, 200);
+      }, 1000);
     }, (error: Error) => { 
       this.localStorage.remove('userData');
       console.log(error)
