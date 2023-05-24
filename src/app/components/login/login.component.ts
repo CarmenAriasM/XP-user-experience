@@ -20,10 +20,6 @@ export class LoginComponent {
   ngOnInit() {
     this.localStorage.remove('userData')
   }
-  goToHomePage() {
-    this.router.navigate(['home']); // delete this sentence when backend works so you have to login first
-    this.sendData()
-  }
   sendData() {
     const formData = new FormData();
     formData.append('userName', this.form.get('userName').value );
