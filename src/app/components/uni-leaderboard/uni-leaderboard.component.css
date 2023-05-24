@@ -38,7 +38,12 @@
     justify-content: center;
     position: absolute;
     top: -30px;
-    left: 28%;
+    left: 0;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: 100%;
 }
 .main {
     background-color: var(--pink);
@@ -56,32 +61,32 @@
 }
 .uni {
     display: grid;
-    grid-template-columns: 50px 2fr 6fr 1fr;
+    grid-template-columns: 50px 2fr 5fr 2fr;
     gap: 10px;
-    font-size: 20px;
+    font-size: 30px;
     padding: 8px;
     align-items: center;
+    height: 80px;
 }
 .uni img {
-    border-radius: 20px;
-    width: 25px;
-    height: 25px;
+    border-radius: 999px;
+    background-color: white;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
 }
 .score {
     margin-left: auto;
 }
-.icon-prize {
-    background-color: black;
-    cursor: default;
-}
 .leaderboard-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 7fr 2fr;
     padding: 10px;
     background-color: white;
     border-radius: 16px;
     margin: 10px 0;
     color: black;
-    font-size: 14px;
+    font-size: 18px;
 }
 .leaderboard-header div:first-of-type {
     margin-right: 10px;
@@ -89,30 +94,30 @@
 .leaderboard-header div:last-of-type {
     margin-left: auto;
 }
-.uni div:first-of-type {
-    margin-right: 20px;
-}
 .uni:first-of-type {
-    height: 80px;
+    height: 160px;
 }
 .uni:first-of-type .position, .uni:nth-child(2) .position, .uni:nth-child(3) .position {
     visibility: hidden;
 }
 .uni:nth-child(2), .uni:nth-child(3) {
-    height: 60px;
+    height: 120px;
 }
 .uni:nth-child(2) img, .uni:nth-child(3) img {
-    width: 35px;
-    height: 35px;
+    width: 60px;
+    height: 60px;
 }
 .uni:first-of-type img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+}
+.position {
+    text-align: center;
 }
 .uni:first-of-type .icon-crown, .uni:nth-child(2) .icon-crown, .uni:nth-child(3) .icon-crown {
     position: absolute;
-    top: -10px;
-    right: -14px;
+    top: -20px;
+    right: -28px;
     margin: 0;
     transform: rotate(45deg);
     background-color: var(--pink);
@@ -121,15 +126,22 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     padding-top: 10px;
 }
 .uni:nth-child(2) .icon-crown, .uni:nth-child(3) .icon-crown {
-    width: 30px;
-    height: 30px;
-    top: -15px;
-    right: -7px;
+    top: -25px;
+    right: -25px;
+}
+.uni:nth-child(1) .icon-crown, .icon-prize-filled {
+    background-color: #FFD700;
+}
+.uni:nth-child(2) .icon-crown {
+    background-color: #C0C0C0;
+}
+.uni:nth-child(3) .icon-crown {
+    background-color: #CD7F32;
 }
 .img-container {
     position: relative;
@@ -141,6 +153,35 @@
     display: flex;
     align-items: center;
     gap: 20px;
+}
+.icon {
+    cursor: default;
+}
+.icon-stars, .icon-leaderboard, .icon-people {
+    background-color: var(--pink);
+}
+.icon-leaderboard {
+    margin-left: 10px;
+}
+.average-score {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.people {
+    text-align: end;
+}
+.icon-people {
+    margin-right: 5px;
+}
+.teammates {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+.icon-prize-filled {
+    width: 30px;
+    height: 30px;
 }
 @media (min-width: 500px) {
      .main {

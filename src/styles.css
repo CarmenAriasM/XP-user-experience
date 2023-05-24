@@ -97,6 +97,15 @@ router-outlet + * {
 .icon-stars {
   mask: url(/assets/icons/stars.svg) no-repeat center;
 }
+.icon-leaderboard {
+  mask: url(/assets/icons/leaderboard.svg) no-repeat center;
+}
+.icon-people {
+  mask: url(/assets/icons/people.svg) no-repeat center;
+}
+.icon-prize-filled {
+  mask: url(/assets/icons/prize-filled.svg) no-repeat center;
+}
 
 /*  Buttons styles */
 .form, .main-container {
