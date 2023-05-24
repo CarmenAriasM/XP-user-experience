@@ -11,8 +11,7 @@ export class HomeComponent {
   data: any;
   constructor(public localStorage: LocalStorageService, public backendService: BackendConnectionService) {}
   ngOnInit() {
-    this.data = this.localStorage.get('userData');
-    this.data = JSON.parse(this.data);
+    this.data = JSON.parse(this.localStorage.get('userData')!);
     console.log(this.data)
   }
   user: Object | undefined;
