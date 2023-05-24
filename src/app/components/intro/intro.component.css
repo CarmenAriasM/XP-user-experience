@@ -10,15 +10,15 @@ body  {
     height: 100%;
     width: 100%;
 }
-.logo, .logo-word {  
+.logo {  
     display: block;
     width: 160px;
     height: 100px;
-    background-color: var(--pastel-orange);
-    mask: url(/assets/icons/summit-logo.svg) no-repeat center;
+  /*   background-color: var(--pastel-orange);
+    mask: url(/assets/logo-xp.png) no-repeat center; */
 }
-.logo-word {
-    background-color: var(--pink);
-    mask: url(/assets/icons/summit.svg) no-repeat center;
-    height: 50px;
+.logo img {
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
 }

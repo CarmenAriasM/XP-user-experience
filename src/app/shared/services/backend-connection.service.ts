@@ -13,12 +13,14 @@ export class BackendConnectionService {
     return this.http.post( this.apiUrl + 'User/login', data).pipe(catchError(this.handleError));
   } 
   register(data: any): Observable<any> {
-    return this.http.post( this.apiUrl + 'User/signUp ', data).pipe(catchError(this.handleError));
+    return this.http.post( this.apiUrl + 'User/signUp', data).pipe(catchError(this.handleError));
   } 
   setTravelMode(data: any): Observable<any> {
-    return this.http.put( this.apiUrl + 'User/set/travelMode ', data).pipe(catchError(this.handleError));
+    return this.http.put( this.apiUrl + 'User/set/travelMode', data).pipe(catchError(this.handleError));
   } 
-  
+  getLeaderboard(): Observable<any> {
+    return this.http.get( this.apiUrl + 'User/universityLeaderboard').pipe(catchError(this.handleError));  
+  }
   public handleError(err: HttpErrorResponse) {
     let errMsg:string='';
     if (err.error instanceof Error) {

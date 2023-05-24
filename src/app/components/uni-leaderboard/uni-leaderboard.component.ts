@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
 
 @Component({
   selector: 'app-uni-leaderboard',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./uni-leaderboard.component.css']
 })
 export class UniLeaderboardComponent {
-
+  constructor(public backendService: BackendConnectionService) {}
+  ngOnInit() {
+    this.backendService.getLeaderboard().subscribe((data:any) => {
+      console.log(data)
+    })
+  }
 }
