@@ -3,7 +3,8 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    padding: 20px 0;
+    height: auto;
 }
 .leaderboard {
     width: 100%;
@@ -26,6 +27,7 @@
     color: black;
     padding: 10px;
     border-radius: 16px;
+    border: 2px solid var(--pink);
 }
 .subtitle div {
     display: flex;
@@ -34,6 +36,9 @@
 .header {
     display: flex;
     justify-content: center;
+    position: absolute;
+    top: -30px;
+    left: 28%;
 }
 .main {
     background-color: var(--pink);
@@ -43,12 +48,15 @@
     width: 95%;
     padding: 10px;
     max-width: 900px;
+    position: relative;
+    margin-top: 30px;
 }
 .leaderboard .uni:nth-child(odd) {
     background-color: var(--light-yellow);
 }
 .uni {
-    display: flex;
+    display: grid;
+    grid-template-columns: 50px 2fr 6fr 1fr;
     gap: 10px;
     font-size: 20px;
     padding: 8px;
@@ -83,7 +91,56 @@
 }
 .uni div:first-of-type {
     margin-right: 20px;
-    margin-left: 20px;
+}
+.uni:first-of-type {
+    height: 80px;
+}
+.uni:first-of-type .position, .uni:nth-child(2) .position, .uni:nth-child(3) .position {
+    visibility: hidden;
+}
+.uni:nth-child(2), .uni:nth-child(3) {
+    height: 60px;
+}
+.uni:nth-child(2) img, .uni:nth-child(3) img {
+    width: 35px;
+    height: 35px;
+}
+.uni:first-of-type img {
+    width: 50px;
+    height: 50px;
+}
+.uni:first-of-type .icon-crown, .uni:nth-child(2) .icon-crown, .uni:nth-child(3) .icon-crown {
+    position: absolute;
+    top: -10px;
+    right: -14px;
+    margin: 0;
+    transform: rotate(45deg);
+    background-color: var(--pink);
+    font-size: 12px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    padding-top: 10px;
+}
+.uni:nth-child(2) .icon-crown, .uni:nth-child(3) .icon-crown {
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    right: -7px;
+}
+.img-container {
+    position: relative;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+}
+.second-grid {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 @media (min-width: 500px) {
      .main {

@@ -90,6 +90,13 @@ router-outlet + * {
 .icon-chat {
   mask: url(/assets/icons/icon-chat.svg) no-repeat center;
 }
+.icon-crown {
+  mask: url(/assets/icons/crown.svg) no-repeat center;
+  display: none;
+}
+.icon-stars {
+  mask: url(/assets/icons/stars.svg) no-repeat center;
+}
 
 /*  Buttons styles */
 .form, .main-container {
