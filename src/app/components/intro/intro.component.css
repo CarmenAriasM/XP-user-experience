@@ -11,7 +11,9 @@ body  {
     width: 100%;
 }
 .logo {  
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 160px;
     height: 100px;
   /*   background-color: var(--pastel-orange);
