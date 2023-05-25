@@ -125,6 +125,7 @@ select {
 .container-persona-first, .container-persona-second {
     display: flex;
     gap: 30px;
+    flex-direction: column;
 }
 @media (min-width: 550px) {
     .grid-container {
@@ -132,6 +133,9 @@ select {
      }
 }
 @media (min-width: 768px) {
+    .container-persona-first, .container-persona-second {
+        flex-direction: row;
+    }
     .grid-container {
         grid-template-columns: repeat(4, 1fr);
      }
