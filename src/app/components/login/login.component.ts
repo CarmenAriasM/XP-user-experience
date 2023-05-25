@@ -19,6 +19,7 @@ export class LoginComponent {
   }
   ngOnInit() {
     this.localStorage.remove('userData')
+    this.localStorage.remove('user');
   }
   sendData() {
     const formData = new FormData();
@@ -26,6 +27,7 @@ export class LoginComponent {
     formData.append('IdUID', this.form.get('password').value );
     this.backendService.login(formData).subscribe((data: any) => {
       console.log(data)
+      this.localStorage.set('user', JSON.stringify(formData));
       this.localStorage.remove('userData')
       this.localStorage.set('userData', JSON.stringify(data));
       setTimeout(() => {

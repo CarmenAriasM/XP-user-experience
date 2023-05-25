@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
@@ -9,10 +10,19 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
 })
 export class HomeComponent {
   data: any;
-  constructor(public localStorage: LocalStorageService, public backendService: BackendConnectionService) {}
+  userData: any;
+  previousUrl: any;
+  constructor(public localStorage: LocalStorageService, public backendService: BackendConnectionService,  public router: Router) {
+    this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
+  }
   ngOnInit() {
     this.data = JSON.parse(this.localStorage.get('userData')!);
     console.log(this.data)
+    this.userData = JSON.parse(this.localStorage.get('user')!);
+    console.log(this.userData)
+    if(this.previousUrl != 'login') {
+      this.reloadUser()
+    }
   }
   user: Object | undefined;
   wasItAsked: boolean = false;
@@ -32,12 +42,22 @@ export class HomeComponent {
       this.openPopUp()
     }
   }
+  reloadUser() {
+    const formData = new FormData();
+    formData.append('userName', this.userData.userName );
+    formData.append('IdUID', this.userData.IdUID );
+    this.backendService.login(formData).subscribe((data: any) => {
+      console.log(data)
+      this.data = data;
+    }); 
+  }
   sendToDB() {
     const formData = new FormData();
     formData.append('travelMode', this.transport);
     formData.append('id', this.data.idUser);
     this.backendService.setTravelMode(formData).subscribe((data: any) => {
       console.log(data)
+      this.reloadUser();
     }, (error: Error) => { 
       console.log(error)
     }); 

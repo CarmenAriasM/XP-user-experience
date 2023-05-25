@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { colleges } from 'src/app/shared/services/colleges';
+import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
 
 @Component({
   selector: 'app-leaderboards',
@@ -17,20 +18,27 @@ export class LeaderboardsComponent {
   accepted: boolean = false;
   collegeName: any;
   data: any;
-  constructor(public router: Router, public localStorage: LocalStorageService) {
+  userData: any;
+  constructor(public router: Router, public localStorage: LocalStorageService, public backendService: BackendConnectionService) {
     this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
   }
   ngOnInit() {
     if(this.previousUrl == '/notifications') {
       this.leaderboards = false;
     }
-    if(this.localStorage.get('userData')) {
-      this.data = this.localStorage.get('userData');
-      this.data = JSON.parse(this.data);
-      console.log(this.data)
-      this.collegeName = colleges.filter(x => x.id == this.data.idUniversity);
-      console.log(this.collegeName)
-    }
+    this.data = this.localStorage.get('userData');
+    this.data = JSON.parse(this.data);
+    this.collegeName = colleges.filter(x => x.id == this.data.idUniversity);
+    this.userData = JSON.parse(this.localStorage.get('user')!);
+    this.reloadUser()
+  }
+  reloadUser() {
+    const formData = new FormData();
+    formData.append('userName', this.userData.userName );
+    formData.append('IdUID', this.userData.IdUID );
+    this.backendService.login(formData).subscribe((data: any) => {
+      this.data = data;
+    }); 
   }
   showLeaderboard(leaderboard: string) {
     let arrow = document.getElementById(leaderboard + '-arrow') as HTMLElement | null;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
@@ -8,12 +9,23 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
 })
 export class RewardsComponent {
   data: any;
-  constructor(public localStorage: LocalStorageService) {}
+  userData: any;
+  constructor(public localStorage: LocalStorageService, public backendService: BackendConnectionService) {}
   ngOnInit() {
-    if(this.localStorage.get('userData')) {
-      this.data = this.localStorage.get('userData');
-      this.data = JSON.parse(this.data);
-      console.log(this.data)
-    }
+    this.data = this.localStorage.get('userData');
+    this.data = JSON.parse(this.data);
+    console.log(this.data)
+    this.userData = JSON.parse(this.localStorage.get('user')!);
+    console.log(this.userData)
+    this.reloadUser()
+  }
+  reloadUser() {
+    const formData = new FormData();
+    formData.append('userName', this.userData.userName );
+    formData.append('IdUID', this.userData.IdUID );
+    this.backendService.login(formData).subscribe((data: any) => {
+      console.log(data)
+      this.data = data;
+    }); 
   }
 }
