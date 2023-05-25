@@ -18,8 +18,8 @@ export class BackendConnectionService {
   setTravelMode(data: any): Observable<any> {
     return this.http.put( this.apiUrl + 'User/set/travelMode', data).pipe(catchError(this.handleError));
   } 
-  getLeaderboard(data?: any): Observable<any> {
-    return this.http.post( this.apiUrl + 'User/universityLeaderboard', data).pipe(catchError(this.handleError));  
+  getLeaderboard(): Observable<any> {
+    return this.http.get( this.apiUrl + 'User/universityLeaderboard').pipe(catchError(this.handleError));  
   }
   public handleError(err: HttpErrorResponse) {
     let errMsg:string='';
