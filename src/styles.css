@@ -1,9 +1,12 @@
 :root {
-  --red: #772D29;
+  --blue: #98C3D8;
+  --light-blue: #F4F7FA;
+  --green: #6DC165;
+  --dark-blue: #0A306B;
   --orange: #D4654B;
   --pastel-orange: #F9D8A7;
-  --light-yellow: #FFF7E1;
-  --pink: #EA9CC9;
+/*   --light-yellow: #FFF7E1;
+ */  --pink: #EA9CC9;
   --white: #FFFFFF;
   --black: #000000;
   --grey: #A6A6A6;
@@ -21,20 +24,20 @@ html, body {
   padding: 0;
 }
 body {
-  background-color: var(--light-yellow);
+  background-color: var(--light-blue);
 }
 app-intro, app-login, app-reg-page {
   width: 100%;
   height: 100%;
   display: block;
 }
-app-intro, app-qr-code {
-  background-color: var(--red);
+app-intro {
+  background-color: var(--blue);
   height: 100%;
 }
 input {
   text-align: center;
-  color: var(--red);
+  color: var(--blue);
 }
 app-footer {
   width: 100%;
@@ -69,7 +72,7 @@ router-outlet + * {
   height: 24px;
   fill: none;
   stroke: black;
-  background-color: var(--red);
+  background-color: var(--green);
   cursor: pointer;
 }
 .icon-house {
@@ -124,28 +127,28 @@ router-outlet + * {
 input, .login-btn, .first-access-btn {
   width: 244px;
   height: 42px;
-  border: 2px solid var(--red);
+  border: 2px solid var(--blue);
   border-radius: 21.5px;
   background: transparent;
 }
 input::placeholder {
-  color: var(--red);
+  color: var(--blue);
   text-align: center;
 }
 .login-btn {
-  background-color: var(--red);
-  color: var(--light-yellow);
+  background-color: var(--blue);
+  color: var(--white);
   cursor: pointer;
   transition: all 300ms;
 }
 .login-btn:hover {
-  background-color: var(--red);
+  background-color: var(--blue);
   opacity: .8;
 }
 .first-access-btn {
   background: var(--pastel-orange);
   border: 2px solid var(--pastel-orange);
-  color: var(--red);
+  color: var(--blue);
   cursor: pointer;
   transition: all 300ms;
 }
@@ -161,6 +164,11 @@ input::placeholder, .login-btn, .first-access-btn {
   text-align: center;
   font-size: 17px;
   margin-bottom: 20px;
+  color: var(--dark-blue);
+}
+input::placeholder { 
+  color: var(--dark-blue);
+  opacity: 1; 
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

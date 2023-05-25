@@ -116,16 +116,16 @@ export class RegPageComponent {
     }
   }
   chooseCollege(id: any) {
-    for(let i = 0; i < 13; i++) {
-      document.getElementById('image' + i)?.classList.remove('border')
+    for(let number of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) {
+      document.getElementById('image' + number)?.classList.remove('border')
     }
     document.getElementById('image' + id)?.classList.add('border');
     this.selectedCollege = id;
     this.goToPersonaSelection();
   }
   choosePersona(id: string) {
-    for(let i = 0; i < 13; i++) {
-      document.getElementById('imagePersona' + i)?.classList.remove('border')
+    for(let letter of ['A', 'B', 'C', 'D', 'E', 'F', 'G']) {
+      document.getElementById('imagePersona' + letter)?.classList.remove('border')
     }
     document.getElementById('imagePersona' + id)?.classList.add('border');
     this.selectedPersona = id;

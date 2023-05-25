@@ -2,7 +2,7 @@
     padding: 20px;
 }
 .first-container {
-    background-color: white;
+    background-color: var(--blue);
     border-radius: 16px;
     padding: 20px 30px;
     display: flex;
@@ -13,7 +13,7 @@
 }
 .points {
     font-size: 28px;
-    color: var(--red);
+    color: var(--white);
 }
 .points span {
     margin-left: 10px;
@@ -23,6 +23,7 @@
     line-height: 16px;
     letter-spacing: 0.4px;
     margin-top: 10px;
+    color: var(--dark-blue);
 }
 .points-graph {
     display: flex;
@@ -31,7 +32,7 @@
     margin-bottom: 40px;
 }
 .subsection-title {
-    color: var(--red);
+    color: var(--dark-blue);
     font-weight: 500;
     font-size: 12px;
 }
@@ -42,7 +43,7 @@
     overflow-y: auto;
 }
 .carousel-item {
-    background-color: var(--pink);
+    background-color: var(--blue);
     color: white;
     border-radius: 16px;
     display: flex;
@@ -75,11 +76,11 @@
     padding-bottom: 70px;
 }
 .past-claimings-container {
-    background-color: var(--pastel-orange);
+    background-color: var(--white);
     border-radius: 16px;
     padding: 20px;
     margin-top: 15px;
-    color: var(--red);
+    color: var(--dark-blue);
     font-size: 11px;
 }
 .claiming {

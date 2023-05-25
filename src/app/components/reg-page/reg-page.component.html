@@ -22,14 +22,12 @@
         <div>Please select your persona:</div>
         <div class="container-persona-first">
             <div *ngFor="let persona of personas.slice(0, 4)" class="persona">
-                <div><img src="{{persona.image}}" alt="" id="imagePersona{{persona.id}}" (click)="choosePersona(persona.id)"></div>
-                <div>{{persona.name}}</div>
+                <div class="individual-persona-container" id="imagePersona{{persona.id}}" (click)="choosePersona(persona.id)">{{persona.id}}</div>
             </div>
         </div>
         <div class="container-persona-second">
             <div *ngFor="let persona of personas.slice(4, 7)" class="persona">
-                <div><img src="{{persona.image}}" alt="" id="imagePersona{{persona.id}}" (click)="choosePersona(persona.id)"></div>
-                <div>{{persona.name}}</div>
+                <div class="individual-persona-container" id="imagePersona{{persona.id}}" (click)="choosePersona(persona.id)">{{persona.id}}</div>
             </div>
         </div>
         <div>

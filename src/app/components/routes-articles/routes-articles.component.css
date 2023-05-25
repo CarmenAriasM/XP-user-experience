@@ -1,7 +1,7 @@
 .back-btn {
     display: flex;
     gap: 10px;
-    color: var(--red);
+    color: var(--dark-blue);
     padding-left: 10px;
 }
 .back-btn div {
@@ -14,7 +14,7 @@
     padding: 10px;
 }
 .item {
-    background-color: var(--pastel-orange);
+    background-color: var(--blue);
     border-radius: 16px;
     max-width: 200px;
 }
@@ -45,7 +45,7 @@
     gap: 10px;
 }
 .data {
-    color: #A6A6A6;
+    color: var(--dark-blue);
     font-size: 10px;
     padding: 0 16px;
     padding-bottom: 10px;
@@ -54,6 +54,7 @@
     font-weight: 600;
     font-size: 16px;
     text-align: center;
+    color: white;
 }
 .article-link {
     font-size: 9px;

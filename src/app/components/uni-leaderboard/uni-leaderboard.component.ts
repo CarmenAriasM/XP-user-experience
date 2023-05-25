@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 import { BackendConnectionService } from 'src/app/shared/services/backend-connection.service';
 
 @Component({
@@ -10,8 +11,13 @@ export class UniLeaderboardComponent {
   universities = [];
   constructor(public backendService: BackendConnectionService) {}
   ngOnInit() {
+    this.callBackend()
+    interval(10000).subscribe(() => {
+      this.callBackend();
+    });
+  }
+  callBackend() {
     this.backendService.getLeaderboard().subscribe((data:any) => {
-      console.log(data)
       this.universities = data;
     })
   }

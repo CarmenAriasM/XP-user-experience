@@ -16,7 +16,7 @@
     border-radius: 9999px;
 }
 .center-item-div {
-    background-color: var(--red);
+    background-color: var(--green);
     box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.1);
     border-radius: 9999px;
     width: 50px;
@@ -31,9 +31,9 @@
     justify-content: space-evenly;
     align-items: center;
 }
-.pinkBg div {
-    background-color: var(--pink);
+.blueBg div {
+    background-color: var(--dark-blue);
 }
-.orangeBg {
-    background-color: #D4654B;
+.blueBgBtn {
+    background-color: var(--dark-blue);
 }

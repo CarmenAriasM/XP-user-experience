@@ -1,5 +1,5 @@
 body  {
-    background-color: var(--red);
+    background-color: var(--blue);
 }
 .logo-container {
     position: relative;
@@ -14,13 +14,11 @@ body  {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 160px;
-    height: 100px;
   /*   background-color: var(--pastel-orange);
     mask: url(/assets/logo-xp.png) no-repeat center; */
 }
 .logo img {
     object-fit: contain;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }

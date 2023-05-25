@@ -33,6 +33,11 @@ export class LoginComponent {
       }, 1000);
     }, (error: Error) => { 
       this.localStorage.remove('userData');
+      let alert = document.getElementById('alert')!
+      alert.style.display = 'flex';
+      setTimeout(() => {
+        alert.style.display = 'none';
+      }, 1500);
       console.log(error)
     }); 
   }

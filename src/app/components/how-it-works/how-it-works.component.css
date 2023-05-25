@@ -9,9 +9,10 @@
 }
 .text {
     margin-bottom: 40px;
+    color: var(--dark-blue);
 }
 .back-btn {
-    color: var(--orange);
+    color: var(--dark-blue);
     display: flex;
     gap: 10px;
     padding-left: 25px;

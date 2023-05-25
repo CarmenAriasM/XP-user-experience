@@ -1,5 +1,5 @@
 body  {
-    background-color: var(--red);
+    background-color: var(--blue);
 }
 .form {
     margin-top: auto;
@@ -59,7 +59,7 @@ img {
 }
 .back-btn {
     background-color: var(--pastel-orange) !important;
-    color: var(--red);
+    color: var(--blue);
     border-color: var(--pastel-orange);
 } 
 .alert {
@@ -67,20 +67,20 @@ img {
     left: 33%;
     right: 33%;
     top: 10%;
-    background-color: var(--light-yellow);
-    border: 3px solid var(--red);
+    background-color: var(--light-blue);
+    border: 3px solid var(--blue);
     border-radius: 20px;
     font-size: 17px;
     padding: 10px;
-    color: var(--red);
+    color: var(--blue);
 }
 .confirmation-btn {
-    border: 2px solid var(--light-yellow);
+    border: 2px solid var(--light-blue);
     transition: all 300ms;
 }
 .confirmation-btn:hover {
     background-color: var(--pastel-orange);
-    color: var(--red);
+    color: var(--blue);
 }
 .inner {
     display: flex;
@@ -102,11 +102,11 @@ img {
 select {
     width: 244px;
     height: 42px;
-    border: 2px solid var(--red);
+    border: 2px solid var(--blue);
     border-radius: 21.5px;
     background: transparent;
     text-align: center;
-    color: var(--red);
+    color: var(--blue);
     appearance: none;
     font-size: 14px;
     cursor: pointer;
@@ -126,6 +126,14 @@ select {
     display: flex;
     gap: 30px;
     flex-direction: column;
+}
+.individual-persona-container {
+    font-size: 34px;
+    width: 100px;
+    height: 100px;
+    border-radius: 9999px;
+    background-color: white;
+    cursor: pointer;
 }
 @media (min-width: 550px) {
     .grid-container {
