@@ -7,10 +7,12 @@ import { BackendConnectionService } from 'src/app/shared/services/backend-connec
   styleUrls: ['./uni-leaderboard.component.css']
 })
 export class UniLeaderboardComponent {
+  universities = [];
   constructor(public backendService: BackendConnectionService) {}
   ngOnInit() {
     this.backendService.getLeaderboard().subscribe((data:any) => {
       console.log(data)
+      this.universities = data;
     })
   }
 }

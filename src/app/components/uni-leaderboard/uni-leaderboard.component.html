@@ -16,17 +16,17 @@
             </div>
             <div class="average-score">Average score <div class="icon icon-stars"></div></div>
         </div>
-        <div class="leaderboard" id="uni-leaderboard">
-            <div class="uni">
-                <div class="position">1</div>
+        <div class="leaderboard" id="uni-leaderboard" *ngIf="universities">
+            <div class="uni" *ngFor="let uni of universities; let i = index">
+                <div class="position">{{i + 1}}</div>
                 <div class="second-grid">
-                    <div class="img-container"><img src="assets/colleges/college-logo-1.png" alt=""> <div class="icon icon-crown">1</div></div>
-                    <div>Trinity</div>
+                    <div class="img-container"><img src="{{uni['image']}}" alt=""> <div class="icon icon-crown">1</div></div>
+                    <div>{{uni['universityName']}}</div>
                 </div>
-                <div class="people">3</div>
-                <div class="score">354</div>
+                <div class="people">{{uni['numberOfPeople']}}</div>
+                <div class="score">{{uni['averageScore']}}</div>
             </div>
-            <div class="uni">
+           <!--  <div class="uni">
                 <div class="position">2</div>
                 <div class="second-grid">
                     <div class="img-container"><img src="assets/leaderboard-pics/person-2.png" alt=""><div class="icon icon-crown">2</div></div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="people">3</div>
                 <div class="score">78</div>
-            </div>
+            </div> -->
           <!--   <div class="uni">
                 <div class="position">6</div>
                 <div class="second-grid">
