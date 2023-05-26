@@ -2,7 +2,7 @@
     <div class="main-container" id="reg-container" *ngIf="showForm">
         <div class="form">
             <input type="text" name="" id="person-name" placeholder="NAME" formControlName="userName">
-            <input type="number" name="" id="person-uid" placeholder="UID" formControlName="IdUID">
+            <input type="number" name="" id="person-uid" placeholder="PARTICIPANT NUMBER" formControlName="IdUID">
             <button class="login-btn" type="button" (click)="goToUniversitySelection()" [disabled]="!form.get('userName').value || !form.get('IdUID').value"  [ngClass]="!form.get('userName').value || !form.get('IdUID').value ? 'cancel-btn' : 'login-btn'">ENTER</button>
         </div>
     </div>
