@@ -50,7 +50,7 @@
     transition: all 300ms;
 }
 .confirmation-btn:hover {
-    background-color: var(--pastel-orange);
+    background-color: var(--dark-blue);
     color: var(--blue);
 }
 .inner {
