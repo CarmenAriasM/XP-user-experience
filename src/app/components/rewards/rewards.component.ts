@@ -14,9 +14,7 @@ export class RewardsComponent {
   ngOnInit() {
     this.data = this.localStorage.get('userData');
     this.data = JSON.parse(this.data);
-    console.log(this.data)
     this.userData = JSON.parse(this.localStorage.get('user')!);
-    console.log(this.userData)
     this.reloadUser()
   }
   reloadUser() {
@@ -24,7 +22,6 @@ export class RewardsComponent {
     formData.append('userName', this.userData.userName );
     formData.append('IdUID', this.userData.IdUID );
     this.backendService.login(formData).subscribe((data: any) => {
-      console.log(data)
       this.data = data;
     }); 
   }

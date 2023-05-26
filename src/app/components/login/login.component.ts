@@ -26,7 +26,6 @@ export class LoginComponent {
     formData.append('userName', this.form.get('userName').value );
     formData.append('IdUID', this.form.get('password').value );
     this.backendService.login(formData).subscribe((data: any) => {
-      console.log(data)
       this.localStorage.set('user', JSON.stringify({userName: this.form.get('userName').value, IdUID: this.form.get('password').value}));
       this.localStorage.remove('userData')
       this.localStorage.set('userData', JSON.stringify(data));
@@ -41,7 +40,6 @@ export class LoginComponent {
       setTimeout(() => {
         alert.style.display = 'none';
       }, 1500);
-      console.log(error)
     }); 
   }
 }

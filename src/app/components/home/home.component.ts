@@ -17,9 +17,7 @@ export class HomeComponent {
   }
   ngOnInit() {
     this.data = JSON.parse(this.localStorage.get('userData')!);
-    console.log(this.data)
     this.userData = JSON.parse(this.localStorage.get('user')!);
-    console.log(this.userData)
     if(this.previousUrl != 'login') {
       this.reloadUser()
     }
@@ -48,7 +46,6 @@ export class HomeComponent {
     formData.append('userName', this.userData.userName );
     formData.append('IdUID', this.userData.IdUID );
     this.backendService.login(formData).subscribe((data: any) => {
-      console.log(data)
       this.data = data;
     }); 
   }
@@ -57,7 +54,6 @@ export class HomeComponent {
     formData.append('travelMode', this.transport);
     formData.append('id', this.data.idUser);
     this.backendService.setTravelMode(formData).subscribe((data: any) => {
-      console.log(data)
       this.reloadUser();
     }, (error: Error) => { 
       console.log(error)
