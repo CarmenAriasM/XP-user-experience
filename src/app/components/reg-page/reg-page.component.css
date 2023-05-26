@@ -58,9 +58,9 @@ img {
     cursor: auto;
 }
 .back-btn {
-    background-color: var(--pastel-orange) !important;
-    color: var(--blue);
-    border-color: var(--pastel-orange);
+    background-color: var(--blue) !important;
+    color: var(--white);
+    border-color: var(--blue);
 } 
 .alert {
     position: absolute;
@@ -72,15 +72,15 @@ img {
     border-radius: 20px;
     font-size: 17px;
     padding: 10px;
-    color: var(--blue);
+    color: var(--white);
 }
 .confirmation-btn {
     border: 2px solid var(--light-blue);
     transition: all 300ms;
 }
 .confirmation-btn:hover {
-    background-color: var(--pastel-orange);
-    color: var(--blue);
+    background-color: var(--blue);
+    color: var(--white);
 }
 .inner {
     display: flex;
