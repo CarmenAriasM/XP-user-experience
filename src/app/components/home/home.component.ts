@@ -45,7 +45,7 @@ export class HomeComponent {
   reloadUser() {
     const formData = new FormData();
     console.log(this.userData);
-    formData.append('userName', this.userData.Name );
+    formData.append('userName', this.userData.userName );
     formData.append('IdUID', this.userData.IdUID );
     this.backendService.login(formData).subscribe((data: any) => {
       console.log(data)

@@ -27,7 +27,7 @@ export class LoginComponent {
     formData.append('IdUID', this.form.get('password').value );
     this.backendService.login(formData).subscribe((data: any) => {
       console.log(data)
-      this.localStorage.set('user', JSON.stringify(formData));
+      this.localStorage.set('user', JSON.stringify({userName: this.form.get('userName').value, IdUID: this.form.get('password').value}));
       this.localStorage.remove('userData')
       this.localStorage.set('userData', JSON.stringify(data));
       setTimeout(() => {
@@ -35,6 +35,7 @@ export class LoginComponent {
       }, 1000);
     }, (error: Error) => { 
       this.localStorage.remove('userData');
+      this.localStorage.remove('user');
       let alert = document.getElementById('alert')!
       alert.style.display = 'flex';
       setTimeout(() => {
