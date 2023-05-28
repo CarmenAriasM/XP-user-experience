@@ -1,6 +1,6 @@
 
   export const colleges = [
-    {id: 1, name: 'Alto', image: 'assets/colleges/college-logo-1.png'},
+    {id: 1, name: 'Aalto', image: 'assets/colleges/college-logo-1.png'},
     {id: 2, name: 'LiU', image: 'assets/colleges/college-logo-2.png'},
     {id: 3, name: 'KIT', image: 'assets/colleges/college-logo-3.png'},
     {id: 4, name: 'Mannheim', image: 'assets/colleges/college-logo-4.png'},

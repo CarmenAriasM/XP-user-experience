@@ -131,6 +131,9 @@ input, .login-btn, .first-access-btn {
   border-radius: 21.5px;
   background: transparent;
 }
+input {
+  caret-color: #000000;
+}
 input::placeholder {
   color: var(--blue);
   text-align: center;

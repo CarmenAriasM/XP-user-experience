@@ -19,6 +19,10 @@ export class LeaderboardsComponent {
   collegeName: any;
   data: any;
   userData: any;
+
+  averageScore: any;
+  universityScore: any;
+
   constructor(public router: Router, public localStorage: LocalStorageService, public backendService: BackendConnectionService) {
     this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
   }
@@ -31,6 +35,7 @@ export class LeaderboardsComponent {
     this.collegeName = colleges.filter(x => x.id == this.data.idUniversity);
     this.userData = JSON.parse(this.localStorage.get('user')!);
     this.reloadUser()
+    this.getCollegeLeaderboardInfo(this.data.idUniversity)
   }
   reloadUser() {
     const formData = new FormData();
@@ -68,5 +73,14 @@ export class LeaderboardsComponent {
   }
   acceptRequest() {
     this.accepted = true;
+  }
+  getCollegeLeaderboardInfo(data: any) {
+    let id = { idUniversity: data }
+    console.log(id)
+    this.backendService.getCollegeLeaderboard(id).subscribe((data: any) => {
+      console.log(data)
+     /*  this.averageScore = data.averageScore;
+      this.universityScore = data.universityScore; */
+    }); 
   }
 }

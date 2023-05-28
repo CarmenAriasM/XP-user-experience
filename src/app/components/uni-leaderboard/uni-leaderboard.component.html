@@ -20,7 +20,7 @@
             <div class="uni" *ngFor="let uni of universities; let i = index">
                 <div class="position">{{i + 1}}</div>
                 <div class="second-grid">
-                    <div class="img-container"><img src="{{uni['image']}}" alt=""> <div class="icon icon-crown">1</div></div>
+                    <div class="img-container"><img src="{{uni['image']}}" alt=""> <div class="icon icon-crown">{{i + 1}}</div></div>
                     <div>{{uni['universityName']}}</div>
                 </div>
                 <div class="people">{{uni['numberOfPeople']}}</div>
