@@ -31,32 +31,32 @@
         </div>
         <div class="flex-container">
             <div class="item" id="a">
-                <label for="transport_mode1">
+                <label  [ngClass]="{'disabled' : chosenTravelMode}" for="transport_mode1">
                     <div>PRIVATE CAR</div>
                     <div class="icon-container"><img src="assets/icons/park-and-ride.svg" alt=""></div>
                 </label>
-                <input type="radio" name="transport_mode" id="transport_mode1" value="1" [ngClass]="{'disabled' : data.travelMode < 0}" (click)="chooseTransport('1')">
+                <input type="radio" name="transport_mode" id="transport_mode1" value="1" [ngClass]="{'disabled' : chosenTravelMode}" [checked]="data.travelMode == 1" (click)="chooseTransport('1')">
             </div>
             <div class="item" id="b">
-                <label for="transport_mode2">
+                <label  [ngClass]="{'disabled' : chosenTravelMode}" for="transport_mode2">
                     <div>PUBLIC TRANSPORT</div>
                     <div class="icon-container"><img src="assets/icons/bus.svg" alt=""></div>
                 </label>
-                <input type="radio" name="transport_mode" id="transport_mode2" value="2" [ngClass]="{'disabled' : data.travelMode < 0}" (click)="chooseTransport('2')">
+                <input type="radio" name="transport_mode" id="transport_mode2" value="2" [ngClass]="{'disabled' : chosenTravelMode}" [checked]="data.travelMode == 2" (click)="chooseTransport('2')">
             </div>
             <div class="item" id="c">
-                <label for="transport_mode3">
+                <label  [ngClass]="{'disabled' : chosenTravelMode}" for="transport_mode3">
                     <div>WALK</div>
                     <div class="icon-container"><img src="assets/routes-img/man_walking.svg" alt=""></div>
                 </label>
-                <input type="radio" name="transport_mode" id="transport_mode3" value="3" [ngClass]="{'disabled' : data.travelMode < 0}" (click)="chooseTransport('3')">
+                <input type="radio" name="transport_mode" id="transport_mode3" value="3" [ngClass]="{'disabled' : chosenTravelMode}" [checked]="data.travelMode == 3" (click)="chooseTransport('3')">
             </div>
             <div class="item" id="d">
-                <label for="transport_mode4">
+                <label  [ngClass]="{'disabled' : chosenTravelMode}" for="transport_mode4">
                     <div>CYCLE</div>
                     <div class="icon-container"><img src="assets/icons/cycle.svg" alt=""></div>
                 </label>
-                <input type="radio" name="transport_mode" id="transport_mode4" value="4" [ngClass]="{'disabled' : data.travelMode < 0}" (click)="chooseTransport('4')">
+                <input type="radio" name="transport_mode" id="transport_mode4" value="4" [ngClass]="{'disabled' : chosenTravelMode}" [checked]="data.travelMode == 4" (click)="chooseTransport('4')">
             </div>
         </div>
     </div>

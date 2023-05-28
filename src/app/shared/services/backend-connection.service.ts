@@ -25,7 +25,7 @@ export class BackendConnectionService {
     return this.http.get( this.apiUrl + 'User/get/user').pipe(catchError(this.handleError));  
   } */
   getCollegeLeaderboard(data: any) : Observable<any> {
-    return this.http.get( this.apiUrl + 'User/yourUniversityLeaderboard', data).pipe(catchError(this.handleError));  
+    return this.http.post( this.apiUrl + 'User/yourUniversityLeaderboard', data).pipe(catchError(this.handleError));  
   }
   public handleError(err: HttpErrorResponse) {
     let errMsg:string='';

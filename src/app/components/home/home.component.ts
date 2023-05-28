@@ -12,6 +12,12 @@ export class HomeComponent {
   data: any;
   userData: any;
   previousUrl: any;
+
+  chosenTravelMode: boolean = false;
+
+  user: Object | undefined;
+  wasItAsked: boolean = false;
+  transport!: string;
   constructor(public localStorage: LocalStorageService, public backendService: BackendConnectionService,  public router: Router) {
     this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
   }
@@ -21,10 +27,12 @@ export class HomeComponent {
     if(this.previousUrl != 'login') {
       this.reloadUser()
     }
+    console.log(this.data.travelMode)
+    if(this.data.travelMode > 0) {
+      this.chosenTravelMode = true;
+    }
   }
-  user: Object | undefined;
-  wasItAsked: boolean = false;
-  transport!: string;
+
   openPopUp() {
     this.wasItAsked = true;
   }
@@ -47,6 +55,9 @@ export class HomeComponent {
     formData.append('IdUID', this.userData.IdUID );
     this.backendService.login(formData).subscribe((data: any) => {
       this.data = data;
+      console.log(data)
+      this.localStorage.remove('userData')
+      this.localStorage.set('userData', JSON.stringify(data));
     }); 
   }
   sendToDB() {
@@ -54,6 +65,7 @@ export class HomeComponent {
     formData.append('travelMode', this.transport);
     formData.append('id', this.data.idUser);
     this.backendService.setTravelMode(formData).subscribe((data: any) => {
+      this.chosenTravelMode = true;
       this.reloadUser();
     }, (error: Error) => { 
       console.log(error)
