@@ -34,6 +34,7 @@ export class LeaderboardsComponent {
     this.data = JSON.parse(this.data);
     this.collegeName = colleges.filter(x => x.id == this.data.IdUniversity);
     this.userData = JSON.parse(this.localStorage.get('user')!);
+    console.log(this.data)
     this.reloadUser()
     this.getCollegeLeaderboardInfo(this.data.IdUniversity)
   }
