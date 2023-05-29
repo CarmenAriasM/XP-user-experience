@@ -35,7 +35,7 @@ export class LeaderboardsComponent {
     this.collegeName = colleges.filter(x => x.id == this.data.idUniversity);
     this.userData = JSON.parse(this.localStorage.get('user')!);
     this.reloadUser()
-    this.getCollegeLeaderboardInfo(this.data.idUniversity)
+    this.getCollegeLeaderboardInfo(this.data.IdUniversity)
   }
   reloadUser() {
     const formData = new FormData();
@@ -75,9 +75,8 @@ export class LeaderboardsComponent {
     this.accepted = true;
   }
   getCollegeLeaderboardInfo(data: any) {
-    let id = data.IdUniversity
-    console.log(id)
-    this.backendService.getCollegeLeaderboard(id).subscribe((data: any) => {
+    console.log(data)
+    this.backendService.getCollegeLeaderboard(data).subscribe((data: any) => {
       console.log(data)
      /*  this.averageScore = data.averageScore;
       this.universityScore = data.universityScore; */
