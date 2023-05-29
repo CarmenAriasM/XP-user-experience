@@ -75,7 +75,7 @@ export class LeaderboardsComponent {
     this.accepted = true;
   }
   getCollegeLeaderboardInfo(data: any) {
-    let id = { idUniversity: data }
+    let id = { IdUniversity: data }
     console.log(id)
     this.backendService.getCollegeLeaderboard(id).subscribe((data: any) => {
       console.log(data)
