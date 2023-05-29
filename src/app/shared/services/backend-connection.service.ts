@@ -27,6 +27,7 @@ export class BackendConnectionService {
   getCollegeLeaderboard(idUniversity : number) : Observable<any> {
     let params = new URLSearchParams();
     params.set('id', idUniversity);
+    console.log("request")
     return this.http.get( this.apiUrl + 'User/yourUniversityLeaderboard', params).pipe(catchError(this.handleError));  
   }
   public handleError(err: HttpErrorResponse) {
