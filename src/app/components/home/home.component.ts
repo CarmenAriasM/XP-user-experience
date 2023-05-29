@@ -27,12 +27,11 @@ export class HomeComponent {
     if(this.previousUrl != 'login') {
       this.reloadUser()
     }
-    console.log(this.data.travelMode)
+    console.log(this.data)
     if(this.data.travelMode > 0) {
       this.chosenTravelMode = true;
     }
   }
-
   openPopUp() {
     this.wasItAsked = true;
   }

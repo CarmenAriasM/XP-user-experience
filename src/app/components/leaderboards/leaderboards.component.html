@@ -35,9 +35,9 @@
             <div class="leaderboard-container">
                 <div class="leaderboard-data">
                     <div class="leaderboard-pic"><img src="assets/leaderboard-pics/lunch-mates.png" alt=""></div>
-                    <div class="leaderboard-info">
+                    <div class="leaderboard-info" *ngIf="collegeName">
                         <div class="leaderboard-title">{{collegeName[0].name}}</div>
-                        <div class="leaderboard-position" (click)="showLeaderboard('lunch')">Your current position: 7 
+                        <div class="leaderboard-position" (click)="showLeaderboard('lunch')">Your current position: {{position + 1}} 
                             <svg class="arrow" id="lunch-arrow" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.32431 5.11502L11.3833 0.0575104L12.3644 1.03825L6.32431 7.0765L0.284249 1.03825L1.26528 0.0575104L6.32431 5.11502Z" fill="white"/>
                             </svg>
@@ -45,20 +45,10 @@
                     </div>
                 </div>
                 <div class="leaderboard" id="lunch-leaderboard" *ngIf="showLunchLeaderboard">
-                    <div class="person">
+                    <div class="person" *ngFor="let person of people; let i = index">
                         <div><img src="assets/leaderboard-pics/person-3.png" alt=""></div>
-                        <div>1</div>
-                        <div>Maria Rodriguez</div>
-                    </div>
-                    <div class="person">
-                        <div><img src="assets/leaderboard-pics/person-2.png" alt=""></div>
-                        <div>2</div>
-                        <div>Harry Stevens</div>
-                    </div>
-                    <div class="person">
-                        <div><img src="assets/leaderboard-pics/person-1.png" alt=""></div>
-                        <div>3</div>
-                        <div>Luke Jones</div>
+                        <div>{{i + 1}}</div>
+                        <div>{{person.name}}</div>
                     </div>
                 </div>
             </div>

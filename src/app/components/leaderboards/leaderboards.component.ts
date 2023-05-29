@@ -23,6 +23,8 @@ export class LeaderboardsComponent {
   averageScore: any;
   universityScore: any;
 
+  people: any = [];
+  position: any = '';
   constructor(public router: Router, public localStorage: LocalStorageService, public backendService: BackendConnectionService) {
     this.previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
   }
@@ -32,11 +34,15 @@ export class LeaderboardsComponent {
     }
     this.data = this.localStorage.get('userData');
     this.data = JSON.parse(this.data);
-    this.collegeName = colleges.filter(x => x.id == this.data.IdUniversity);
     this.userData = JSON.parse(this.localStorage.get('user')!);
-    console.log(this.data)
     this.reloadUser()
-    this.getCollegeLeaderboardInfo(this.data.IdUniversity)
+    this.getCollegeLeaderboardInfo(this.data.idUniversity)
+  }
+  getCollegeLeaderboard() {
+    this.backendService.getCollegeLeaderboard(this.data.idUniversity).subscribe((data: any) => {
+      this.people = data;
+      this.position = this.people.map(function(e: any) { return e.name; }).indexOf(this.data.name);
+    }); 
   }
   reloadUser() {
     const formData = new FormData();
@@ -44,6 +50,8 @@ export class LeaderboardsComponent {
     formData.append('IdUID', this.userData.IdUID );
     this.backendService.login(formData).subscribe((data: any) => {
       this.data = data;
+      this.collegeName = colleges.filter(x => x.id == Number(this.data.idUniversity));
+      this.getCollegeLeaderboard()
     }); 
   }
   showLeaderboard(leaderboard: string) {
@@ -76,7 +84,6 @@ export class LeaderboardsComponent {
     this.accepted = true;
   }
   getCollegeLeaderboardInfo(data: any) {
-    console.log(data)
     this.backendService.getCollegeLeaderboard(data).subscribe((data: any) => {
       console.log(data)
      /*  this.averageScore = data.averageScore;

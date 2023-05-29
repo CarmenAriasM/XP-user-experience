@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { environment } from 'src/environment/environment';
 
@@ -25,10 +25,15 @@ export class BackendConnectionService {
     return this.http.get( this.apiUrl + 'User/get/user').pipe(catchError(this.handleError));  
   } */
   getCollegeLeaderboard(idUniversity : number) : Observable<any> {
-  let params = new URLSearchParams();
-  params.append('id', idUniversity.toString());
-    console.log("request")
-    return this.http.get( this.apiUrl + 'User/yourUniversityLeaderboard', params).pipe(catchError(this.handleError));  
+
+    const options = ({
+      params: new HttpParams().append('id', idUniversity.toString())
+    });
+
+    return this.http.get( this.apiUrl + 'User/yourUniversityLeaderboard', options).pipe(catchError(this.handleError));  
+  }
+  substractPoints(data: any): Observable<any>  {
+    return this.http.put( this.apiUrl + 'User/set/points', data).pipe(catchError(this.handleError));
   }
   public handleError(err: HttpErrorResponse) {
     let errMsg:string='';
