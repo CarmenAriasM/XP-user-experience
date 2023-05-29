@@ -25,11 +25,9 @@ export class BackendConnectionService {
     return this.http.get( this.apiUrl + 'User/get/user').pipe(catchError(this.handleError));  
   } */
   getCollegeLeaderboard(idUniversity : number) : Observable<any> {
-
     const options = ({
       params: new HttpParams().append('id', idUniversity.toString())
     });
-
     return this.http.get( this.apiUrl + 'User/yourUniversityLeaderboard', options).pipe(catchError(this.handleError));  
   }
   substractPoints(data: any): Observable<any>  {

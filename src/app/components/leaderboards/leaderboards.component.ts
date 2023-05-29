@@ -36,12 +36,13 @@ export class LeaderboardsComponent {
     this.data = JSON.parse(this.data);
     this.userData = JSON.parse(this.localStorage.get('user')!);
     this.reloadUser()
-    this.getCollegeLeaderboardInfo(this.data.idUniversity)
   }
   getCollegeLeaderboard() {
     this.backendService.getCollegeLeaderboard(this.data.idUniversity).subscribe((data: any) => {
       this.people = data;
       this.position = this.people.map(function(e: any) { return e.name; }).indexOf(this.data.name);
+      // this.averageScore = data.averageScore;
+      // this.universityScore = data.universityScore; 
     }); 
   }
   reloadUser() {
@@ -82,12 +83,5 @@ export class LeaderboardsComponent {
   }
   acceptRequest() {
     this.accepted = true;
-  }
-  getCollegeLeaderboardInfo(data: any) {
-    this.backendService.getCollegeLeaderboard(data).subscribe((data: any) => {
-      console.log(data)
-     /*  this.averageScore = data.averageScore;
-      this.universityScore = data.universityScore; */
-    }); 
   }
 }

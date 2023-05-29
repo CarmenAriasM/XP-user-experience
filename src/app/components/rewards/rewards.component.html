@@ -7,7 +7,7 @@
         </div>
         <div><img src="assets/points-circle-green.png" alt=""></div>
     </div>
-    <div class="points-graph">
+    <div class="points-graph" *ngIf="clickedOnBuy">
         <svg width="330" height="54" viewBox="0 0 330 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M63.4867 31.5886L65.5105 35.4922C65.7865 36.0356 66.5224 36.5568 67.1434 36.6566L70.8114 37.2443C73.1572 37.6214 73.7092 39.2627 72.0188 40.8817L69.1672 43.632C68.6842 44.0977 68.4198 44.996 68.5692 45.6392L69.3857 49.0437C70.0295 51.7385 68.5462 52.781 66.074 51.3726L62.6358 49.4097C62.015 49.0549 60.9916 49.0549 60.3591 49.4097L56.921 51.3726C54.4603 52.781 52.9654 51.7274 53.6094 49.0437L54.4258 45.6392C54.5753 44.996 54.3108 44.0977 53.8278 43.632L50.9762 40.8817C49.2973 39.2627 49.8378 37.6214 52.1835 37.2443L55.8516 36.6566C56.4611 36.5568 57.197 36.0356 57.4729 35.4922L59.4967 31.5886C60.6006 29.4705 62.3943 29.4705 63.4867 31.5886Z" fill="#292929" stroke="#292929" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M148.9 31.5886L150.836 35.4922C151.1 36.0356 151.804 36.5568 152.398 36.6566L155.907 37.2443C158.15 37.6214 158.678 39.2627 157.061 40.8817L154.334 43.632C153.872 44.0977 153.619 44.996 153.762 45.6392L154.543 49.0437C155.159 51.7385 153.74 52.781 151.375 51.3726L148.086 49.4097C147.493 49.0549 146.514 49.0549 145.909 49.4097L142.62 51.3726C140.266 52.781 138.837 51.7274 139.452 49.0437L140.233 45.6392C140.376 44.996 140.123 44.0977 139.661 43.632L136.934 40.8817C135.328 39.2627 135.845 37.6214 138.089 37.2443L141.597 36.6566C142.18 36.5568 142.884 36.0356 143.148 35.4922L145.084 31.5886C146.14 29.4705 147.855 29.4705 148.9 31.5886Z" stroke="#292929" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -23,29 +23,77 @@
             <path d="M147 23V16" stroke="#292929" stroke-width="3" stroke-linecap="round"/>
             <path d="M232 23V16" stroke="#292929" stroke-width="3" stroke-linecap="round"/>
             <path d="M317 23V16" stroke="#292929" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-            
+        </svg>
     </div>
     <div>
         <div class="subsection-title">CLAIM YOUR REWARD</div>
-        <div class="carousel">
-            <div class="carousel-item" routerLink="/rewards/reward-code">
-                <div><img src="assets/icons/coffee-white.svg" alt=""></div>
+        <div class="carousel" *ngIf="!clickedOnBuy">
+            <div class="carousel-item" (click)="buyIsClicked()">
+                <div><img src="assets/icons/to-buy.svg" alt=""></div>
                 <div class="reward-container">
-                    <div class="reward">CUP OF COFFEE</div>
-                    <div class="reward-points">50 points</div>
+                    <div class="reward">BUY</div>
                 </div>
             </div>
             <div class="carousel-item">
+                <div><img src="assets/icons/gift.svg" alt=""></div>
+                <div class="reward-container">
+                    <div class="reward">DONATE</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div><img src="assets/icons/console.svg" alt=""></div>
+                <div class="reward-container">
+                    <div class="reward">PLAYS & STAYS</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div><img src="assets/icons/invest.svg" alt=""></div>
+                <div class="reward-container">
+                    <div class="reward">INVEST</div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel tasks" *ngIf="clickedOnBuy">
+            <div class="carousel-item" routerLink="/rewards/reward-code" [ngClass]="{'disabled' : data.points < 50}" (click)="buyCoffee(50)">
+                <div><img src="assets/icons/coffee-white.svg" alt=""></div>
+                <div class="reward-container">
+                    <div class="reward">CUP OF COFFEE </div>
+                    <div class="reward-points reward-subtitle">Nick's coffee shop</div>
+                    <div class="reward-points">50 points</div>
+                </div>
+            </div>
+            <div class="carousel-item" [ngClass]="{'disabled' : data.points < 200}" (click)="buyCoffee(200)">
                 <div><img src="assets/icons/fork.svg" alt=""></div>
                 <div class="reward-container">
                     <div class="reward">+1h ON LUNCH BREAK</div>
                     <div class="reward-points">200 points</div>
                 </div>
             </div>
+            <div class="carousel-item" [ngClass]="{'disabled' : data.points < 250}" (click)="buyCoffee(250)">
+                <div><img src="assets/icons/cycle-white.svg" alt=""></div>
+                <div class="reward-container">
+                    <div class="reward">BIKE SERVICE</div>
+                    <div class="reward-points reward-subtitle">New Town Bike Shop</div>
+                    <div class="reward-points">250 points</div>
+                </div>
+            </div>
+            <div class="carousel-item" [ngClass]="{'disabled' : data.points < 220}" (click)="buyCoffee(220)">
+                <div><img src="assets/icons/bus-white.svg" alt=""></div>
+                <div class="reward-container">
+                    <div class="reward">PUBLIC TRANSPORT TICKET</div>
+                    <div class="reward-points">220 points</div>
+                </div>
+            </div>
+            <div class="carousel-item" [ngClass]="{'disabled' : data.points < 320}" (click)="buyCoffee(320)">
+                <div><img src="assets/icons/sandwich.svg" alt=""></div>
+                <div class="reward-container">
+                    <div class="reward">FREE CANTEEN LUNCH</div>
+                    <div class="reward-points">320 points</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="past-claimings">
+    <!-- <div class="past-claimings">
         <div class="subsection-title">PAST CLAMINGS</div>
         <div class="past-claimings-container">
             <div class="claiming"> 
@@ -70,6 +118,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <app-footer></app-footer>
