@@ -13,6 +13,7 @@ import { QrCodeComponent } from './components/qr-code/qr-code.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { RoutesArticlesComponent } from './components/routes-articles/routes-articles.component';
 import { UniLeaderboardComponent } from './components/uni-leaderboard/uni-leaderboard.component';
+import { RewardLunchComponent } from './components/reward-lunch/reward-lunch.component';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'how-it-works', component: HowItWorksComponent },
   { path: 'rewards', component: RewardsComponent },
   { path: 'rewards/reward-code', component: QrCodeComponent },
+  { path: 'rewards/reward-lunch', component: RewardLunchComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: 'uni-leaderboard', component: UniLeaderboardComponent },
 

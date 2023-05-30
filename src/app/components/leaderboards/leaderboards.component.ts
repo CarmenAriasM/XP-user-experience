@@ -45,6 +45,13 @@ export class LeaderboardsComponent {
       // this.universityScore = data.universityScore; 
     }); 
   }
+  getCollegeScore() {
+    this.backendService.getScore(this.data.idUniversity).subscribe((data: any) => {
+      console.log(data)
+      this.averageScore = data[1];
+      this.universityScore = data[0]; 
+    }); 
+  }
   reloadUser() {
     const formData = new FormData();
     formData.append('userName', this.userData.userName );
@@ -53,6 +60,7 @@ export class LeaderboardsComponent {
       this.data = data;
       this.collegeName = colleges.filter(x => x.id == Number(this.data.idUniversity));
       this.getCollegeLeaderboard()
+      this.getCollegeScore()
     }); 
   }
   showLeaderboard(leaderboard: string) {

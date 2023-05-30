@@ -33,6 +33,13 @@ export class BackendConnectionService {
   substractPoints(data: any): Observable<any>  {
     return this.http.put( this.apiUrl + 'User/set/points', data).pipe(catchError(this.handleError));
   }
+  getScore(idUniversity : number): Observable<any> {
+    const options = ({
+      params: new HttpParams().append('id', idUniversity.toString())
+    });
+    return this.http.get( this.apiUrl + 'User/yourUniversityScore', options).pipe(catchError(this.handleError));  
+    
+  }
   public handleError(err: HttpErrorResponse) {
     let errMsg:string='';
     if (err.error instanceof Error) {

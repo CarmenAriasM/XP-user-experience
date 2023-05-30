@@ -28,6 +28,10 @@ body {
 .back-btn div {
     cursor: pointer;
 }
+.sync img {
+    width: 60px;
+    height: 60px;
+}
 .carousel-item {
     background-color: var(--blue);
     color: white;
@@ -58,8 +62,4 @@ body {
 }
 .container {
     margin-top: 80px;
-}
-.sync img {
-    width: 60px;
-    height: 60px;
 }

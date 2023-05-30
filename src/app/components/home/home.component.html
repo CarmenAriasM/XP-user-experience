@@ -7,9 +7,9 @@
         <div class="points">
             <div>
                 <div class="number-points">{{data.points}} <span>points</span></div>
-                <div class="points-subtitle">You are 39 points away from getting your next reward!</div>
+                <div class="points-subtitle">You are {{200 - data.points}} points away from getting your next reward!</div>
             </div>
-            <div><img src="assets/points-circle.png" alt=""></div>
+            <div><img src="assets/points-circle.png" alt=""></div><!-- src="{{chosenImage[0].image_circle}}" -->
         </div>
         <div class="points-graph">
             <svg width="330" height="54" viewBox="0 0 330 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +28,7 @@
                 <path d="M232 23V16" stroke="#0a306b" stroke-width="3" stroke-linecap="round"/>
                 <path d="M317 23V16" stroke="#0a306b" stroke-width="3" stroke-linecap="round"/>
             </svg>
+            <!-- Comment whole svg and instead write <img src="{{chosenImage[0].image_points}}" alt="">  -->
         </div>
         <div class="flex-container">
             <div class="item" id="a">

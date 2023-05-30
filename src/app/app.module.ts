@@ -19,6 +19,7 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { RoutesArticlesComponent } from './components/routes-articles/routes-articles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UniLeaderboardComponent } from './components/uni-leaderboard/uni-leaderboard.component';
+import { RewardLunchComponent } from './components/reward-lunch/reward-lunch.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UniLeaderboardComponent } from './components/uni-leaderboard/uni-leader
     QrCodeComponent,
     NotificationsComponent,
     RoutesArticlesComponent,
-    UniLeaderboardComponent
+    UniLeaderboardComponent,
+    RewardLunchComponent
   ],
   imports: [
     BrowserModule,
