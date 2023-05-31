@@ -61,7 +61,7 @@ export class HomeComponent {
       console.log(data)
       this.localStorage.remove('userData')
       this.localStorage.set('userData', JSON.stringify(data));
-      this.checkImg()
+      // this.checkImg()
     }); 
   }
   sendToDB() {

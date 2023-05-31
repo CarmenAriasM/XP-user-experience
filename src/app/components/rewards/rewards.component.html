@@ -3,7 +3,7 @@
     <div class="first-container">
         <div>
             <div class="points">{{data.points}} <span>points</span></div>
-            <div class="text">You are {{200 - data.points}} points away from getting your next reward!</div>
+            <div class="text">You are {{200 - data.points}} points away from the free bike service on your wishlist</div>
         </div>
         <div><img src="assets/points-circle-green.png" alt=""></div>
     </div>
@@ -76,6 +76,9 @@
                     <div class="reward">BIKE SERVICE</div>
                     <div class="reward-points reward-subtitle">Newtown Bike Shop</div>
                     <div class="reward-points">200 points</div>
+                </div>
+                <div class="heart-icon">
+                    <img src="assets/icons/heart.svg" alt="">
                 </div>
             </div>
             <div class="carousel-item" [ngClass]="{'disabled' : data.points < 220}" (click)="buyCoffee(220)">

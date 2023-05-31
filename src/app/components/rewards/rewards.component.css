@@ -53,6 +53,9 @@
     cursor: pointer;
     height: 100px;
 }
+.heart-icon {
+    margin-left: auto;
+}
 .carousel-item div {
     display: flex;
     flex-direction: column;
@@ -118,6 +121,10 @@
 .reward-subtitle {
     font-size: 13px;
     padding: 5px 0;
+}
+.heart-icon img {
+    width: 30px;
+    height: 30px;
 }
 @media (min-width: 500px) {
      .carousel {
