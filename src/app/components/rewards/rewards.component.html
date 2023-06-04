@@ -2,8 +2,8 @@
     <div class="page-title">REWARDS</div>
     <div class="first-container">
         <div>
-            <div class="points">{{data.points}} <span>points</span></div>
-            <div class="text">You are {{200 - data.points}} points away from the free bike service on your wishlist</div>
+            <div class="points">{{data.points}} <span>Commuter Coins</span></div>
+            <div class="text">You are {{200 - data.points}} Commuter Coins away from the free bike service on your wishlist</div>
         </div>
         <div><img src="assets/points-circle-green.png" alt=""></div>
     </div>
@@ -59,7 +59,7 @@
                 <div class="reward-container">
                     <div class="reward">CUP OF COFFEE </div>
                     <div class="reward-points reward-subtitle">Nick's coffee shop</div>
-                    <div class="reward-points">100 points</div>
+                    <div class="reward-points">100 Commuter Coins</div>
                 </div>
             </div>
             <div class="carousel-item" routerLink="/rewards/reward-lunch" [ngClass]="{'disabled' : data.points < 150}" (click)="buyCoffee(150)">
@@ -67,7 +67,7 @@
                 <div class="reward-container">
                     <div class="reward">+1h ON LUNCH BREAK</div>
                     <div class="reward-points reward-subtitle">HR</div>
-                    <div class="reward-points">150 points</div>
+                    <div class="reward-points">150 Commuter Coins</div>
                 </div>
             </div>
             <div class="carousel-item" [ngClass]="{'disabled' : data.points < 200}" (click)="buyCoffee(200)">
@@ -75,7 +75,7 @@
                 <div class="reward-container">
                     <div class="reward">BIKE SERVICE</div>
                     <div class="reward-points reward-subtitle">Newtown Bike Shop</div>
-                    <div class="reward-points">200 points</div>
+                    <div class="reward-points">200 Commuter Coins</div>
                 </div>
                 <div class="heart-icon">
                     <img src="assets/icons/heart.svg" alt="">
@@ -86,7 +86,7 @@
                 <div class="reward-container">
                     <div class="reward">PUBLIC TRANSPORT TICKET</div>
                     <div class="reward-points reward-subtitle">Newtown Bus Service</div>
-                    <div class="reward-points">220 points</div>
+                    <div class="reward-points">220 Commuter Coins</div>
                 </div>
             </div>
             <div class="carousel-item" [ngClass]="{'disabled' : data.points < 320}" (click)="buyCoffee(320)">
@@ -94,36 +94,10 @@
                 <div class="reward-container">
                     <div class="reward">FREE CANTEEN LUNCH</div>
                     <div class="reward-points reward-subtitle">HR</div>
-                    <div class="reward-points">320 points</div>
+                    <div class="reward-points">320 Commuter Coins</div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <div class="past-claimings">
-        <div class="subsection-title">PAST CLAMINGS</div>
-        <div class="past-claimings-container">
-            <div class="claiming"> 
-                <div class="date">2023</div>
-                <div class="info">
-                    <div>11 jan 10:14</div>
-                    <div>cup of coffee</div>
-                    <div>west wing cantina</div>
-                </div>
-            </div>
-            <div class="claiming">
-                <div class="date">2022</div>
-                <div class="info">
-                    <div>26 nov 17:32</div>
-                    <div>day off</div>
-                    <div>HR headquarters</div>
-                </div>
-                <div class="info">
-                    <div>14 sep 13:56</div>
-                    <div>voucher</div>
-                    <div>Operations office</div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </div>
 <app-footer></app-footer>
