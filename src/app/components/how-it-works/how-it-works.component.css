@@ -23,3 +23,6 @@
 .page-title {
     padding-top: 20px;
 }
+.img-container img {
+    width: 300px;
+}
