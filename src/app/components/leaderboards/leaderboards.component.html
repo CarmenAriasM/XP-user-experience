@@ -46,7 +46,7 @@
                 </div>
                 <div class="leaderboard" id="lunch-leaderboard" *ngIf="showLunchLeaderboard">
                     <div class="person" *ngFor="let person of people; let i = index">
-                        <div><img src="assets/leaderboard-pics/person-3.png" alt=""></div>
+                        <div><img src="assets/persona.png" alt=""></div>
                         <div>{{i + 1}}</div>
                         <div>{{person.name}}</div>
                     </div>
@@ -66,19 +66,19 @@
                 </div>
                 <div class="leaderboard" id="online-sales-leaderboard" *ngIf="showOnlineSalesLeaderboard">
                     <div class="person">
-                        <div><img src="assets/leaderboard-pics/person-3.png" alt=""></div>
+                        <div><img src="assets/persona.png" alt=""></div>
                         <div>1</div>
-                        <div>Maria Rodriguez</div>
+                        <div>Maria</div>
                     </div>
                     <div class="person">
-                        <div><img src="assets/leaderboard-pics/person-2.png" alt=""></div>
+                        <div><img src="assets/persona.png" alt=""></div>
                         <div>2</div>
-                        <div>Harry Stevens</div>
+                        <div>{{data.name}}</div>
                     </div>
                     <div class="person">
-                        <div><img src="assets/leaderboard-pics/person-1.png" alt=""></div>
+                        <div><img src="assets/persona.png" alt=""></div>
                         <div>3</div>
-                        <div>Luke Jones</div>
+                        <div>Luke</div>
                     </div>
                 </div>
             </div>
@@ -86,24 +86,24 @@
     </div>
     <div class="friends" *ngIf="!leaderboards">
         <div class="friend" *ngIf="!denied">
-            <div class="person"><img src="assets/leaderboard-pics/person-4.png" alt=""></div>
-            <div class="person-name">Gabriela Poynter</div>
+            <div class="person"><img src="assets/persona.png" alt=""></div>
+            <div class="person-name">Gabriela</div>
             <div class="action-buttons" *ngIf="!accepted">
                 <div (click)="acceptRequest()">ACCEPT REQUEST</div>
                 <div (click)="denyRequest()">DENY REQUEST</div>
             </div>
         </div>
         <div class="friend">
-            <div class="person"><img src="assets/leaderboard-pics/person-1.png" alt=""></div>
-            <div class="person-name">Luke Jones</div>
+            <div class="person"><img src="assets/persona.png" alt=""></div>
+            <div class="person-name">{{data.name}}</div>
         </div>
         <div class="friend">
-            <div class="person"><img src="assets/leaderboard-pics/person-5.png" alt=""></div>
-            <div class="person-name">Ronny Fletcher</div>
+            <div class="person"><img src="assets/persona.png" alt=""></div>
+            <div class="person-name">Ronny</div>
         </div>
         <div class="friend">
-            <div class="person"><img src="assets/leaderboard-pics/person-2.png" alt=""></div>
-            <div class="person-name">Harry Stevens</div>
+            <div class="person"><img src="assets/persona.png" alt=""></div>
+            <div class="person-name">Harry</div>
         </div>
     </div>
 </div>

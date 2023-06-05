@@ -54,12 +54,12 @@
             </div>
         </div>
         <div class="carousel tasks" *ngIf="clickedOnBuy">
-            <div class="carousel-item" routerLink="/rewards/reward-code" [ngClass]="{'disabled' : data.points < 100}" (click)="buyCoffee(100)">
+            <div class="carousel-item" routerLink="/rewards/reward-code" [ngClass]="{'disabled' : data.points < 50}" (click)="buyCoffee(50)">
                 <div><img src="assets/icons/coffee-white.svg" alt=""></div>
                 <div class="reward-container">
                     <div class="reward">CUP OF COFFEE </div>
                     <div class="reward-points reward-subtitle">Nick's coffee shop</div>
-                    <div class="reward-points">100 Commuter Coins</div>
+                    <div class="reward-points">50 Commuter Coins</div>
                 </div>
             </div>
             <div class="carousel-item" routerLink="/rewards/reward-lunch" [ngClass]="{'disabled' : data.points < 150}" (click)="buyCoffee(150)">
