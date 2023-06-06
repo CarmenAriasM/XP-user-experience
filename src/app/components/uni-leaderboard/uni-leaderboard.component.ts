@@ -18,7 +18,7 @@ export class UniLeaderboardComponent {
   }
   callBackend() {
     this.backendService.getLeaderboard().subscribe((data:any) => {
-      this.universities = data;
+      this.universities = data.filter((x: { averageScore: number; }) => x.averageScore > 0);
     })
   }
 }
